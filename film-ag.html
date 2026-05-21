@@ -452,13 +452,13 @@
           <div class="detail-step"><div class="step-num">3</div><div class="step-text">Rollen und Aufgaben besprechen.</div></div>
           <div class="detail-step"><div class="step-num">4</div><div class="step-text">Zeitplan und Ablauf planen.</div></div>
         </div>
-        <div class="detail-section" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.3);border-radius:12px;padding:12px;">
-          <div style="font-size:0.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#818cf8;margin-bottom:10px;">💡 Gutes Thema – worauf achten?</div>
-          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Man kann eine <strong>Geschichte darüber erzählen</strong> – nicht nur Fakten aufzählen.</div></div>
-          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Es gibt etwas zu <strong>zeigen oder nachzuspielen</strong> – nicht nur reden.</div></div>
-          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Das Thema ist <strong>umsetzbar</strong> – in der Schule oder nah dran.</div></div>
-          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Es ist <strong>spannend genug</strong> – würde ich das selbst gerne anschauen?</div></div>
-          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Es passt zum <strong>Format</strong> – Reporter, Wissen, Zeitreise oder Check.</div></div>
+        <div class="detail-section">
+          <div style="font-size:0.95rem; font-weight:700; color:#34d399; margin-bottom:8px;">💡 Gutes Thema – worauf achten?</div>
+          <div class="detail-step"><div class="step-num">1</div><div class="step-text">Man kann eine <strong>Geschichte darüber erzählen</strong> – nicht nur Fakten aufzählen.</div></div>
+          <div class="detail-step"><div class="step-num">2</div><div class="step-text">Es gibt etwas zu <strong>zeigen oder nachzuspielen</strong> – nicht nur reden.</div></div>
+          <div class="detail-step"><div class="step-num">3</div><div class="step-text">Das Thema ist <strong>umsetzbar</strong> – in der Schule oder nah dran.</div></div>
+          <div class="detail-step"><div class="step-num">4</div><div class="step-text">Es ist <strong>spannend genug</strong> – würde ich das selbst gerne anschauen?</div></div>
+          <div class="detail-step"><div class="step-num">5</div><div class="step-text">Es passt zum <strong>Format</strong> – Reporter, Wissen, Zeitreise oder Check.</div></div>
         </div>
         <div class="detail-section">
           <a onclick="openVP('planung')" style="display:inline-flex; align-items:center; gap:8px; background:rgba(14,165,233,0.15); border:1.5px solid #7dd3fc; border-radius:10px; padding:10px 14px; color:#bae6fd; font-size:0.85rem; font-weight:700; text-decoration:none; margin-top:4px; cursor:pointer;">📋 AG-Ablaufplan öffnen</a>
@@ -571,7 +571,7 @@
       <div class="detail-panel" id="p3">
         <p style="font-size:0.88rem; line-height:1.6; color:rgba(255,255,255,0.75); margin-bottom:8px;">Die Kinder wählen ein Thema, recherchieren spannende Fakten und präsentieren sie wie eine Dokusendung – mit eigenen Erklärungen, Bildern im Hintergrund oder nachgestellten Szenen mit Alltagsgegenständen als Modelle.</p>
         <div style="font-size:0.95rem; font-weight:700; color:#34d399; margin-bottom:8px;">Arbeitsschritte</div>
-        <div class="detail-step"><div class="step-num">1</div><div class="step-text">Thema wählen & spannende Fakten recherchieren.</div></div>
+        <div class="detail-step"><div class="step-num">1</div><div class="step-text">Spannende Fakten recherchieren.</div></div>
         <div class="detail-step"><div class="step-num">2</div><div class="step-text">Szene oder Modell überlegen – wie kann man das zeigen?</div></div>
         <div class="detail-step"><div class="step-num">3</div><div class="step-text">Text vorbereiten & einüben.</div></div>
         <div class="detail-step"><div class="step-num">4</div><div class="step-text">Filmen – erklären, zeigen, nachstellen.</div></div>
@@ -590,7 +590,7 @@
         <p style="font-size:0.88rem; line-height:1.6; color:rgba(255,255,255,0.75); margin-bottom:8px;">Ein Begriff oder Thema wird erforscht – was haben Menschen früher darüber gedacht? Die Kinder recherchieren, entwickeln eine Szene und spielen sie nach.</p>
         <div class="detail-section">
           <div style="font-size:0.95rem; font-weight:700; color:#34d399; margin-bottom:8px;">Arbeitsschritte</div>
-          <div class="detail-step"><div class="step-num">1</div><div class="step-text">Begriff oder Thema auswählen.</div></div>
+          
           <div class="detail-step"><div class="step-num">2</div><div class="step-text">Recherchieren: Was dachten Menschen früher darüber?</div></div>
           <div class="detail-step"><div class="step-num">3</div><div class="step-text">Eine kurze Szene daraus entwickeln.</div></div>
           <div class="detail-step"><div class="step-num">4</div><div class="step-text">Rollen verteilen & proben.</div></div>
@@ -803,7 +803,7 @@
 <script>
   const vpData = {
     planung: {
-      title: '📋 AG-Ablaufplan · PLANUNG · 90 Min',
+      title: '📋 AG-Ablaufplan · PLANUNG · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Start</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Thema und Filmidee vorstellen</li><li>Projekte kennenlernen</li><li>Erste Ideen sammeln</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💬 Gesprächsimpulse</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>„Was soll man fühlen, wenn man euren Film sieht?"</li><li>„Was macht Videos spannend?"</li><li>„Wie könnt ihr als Team zusammenarbeiten?"</li></ul></details>`, check: 'Thema & Filmidee besprechen<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Ins Thema einsteigen – was machen wir heute und welche Ideen haben die Kinder?</span>' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:8px;">🎬 Planungsphase</div>
@@ -823,7 +823,7 @@
       ]
     },
     praxis: {
-      title: '📋 AG-Ablaufplan · PRAXIS · 90 Min',
+      title: '📋 AG-Ablaufplan · PRAXIS · 90–180 Min',
       checklist: [
         'Selfie-Video erstellt mit Kriterien',
         'Videoschnitt mit App',
@@ -941,7 +941,7 @@
       ]
     },
     wissen: {
-      title: '📋 AG-Ablaufplan · WISSEN · 90 Min',
+      title: '📋 AG-Ablaufplan · WISSEN · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Start in die Stunde</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Vorwissen aktivieren</li><li>Thema vorstellen</li><li>Ziel erklären: heute erstellen wir einen Wissens-Clip</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💬 Gesprächsideen</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Was wisst ihr schon über das Thema?</li><li>Wo habt ihr davon schon mal gehört?</li><li>Was würdet ihr anderen darüber erzählen?</li></ul></details><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💡 Ideen für den Einstieg</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Impulsvideo oder Bild zeigen</li><li>Eine überraschende Frage stellen</li><li>Kurzes Quiz zum Thema</li></ul></details>`, check: 'Einstieg & Vorwissen aktivieren\n<span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Ein spannendes Thema vorstellen – was wissen die Kinder schon darüber?</span>' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Recherche</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>3–4 spannende Fakten zum Thema finden</li><li>Fakten notieren</li><li>Passendes Bild- oder Videomaterial auswählen</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💡 Tipps für die Recherche</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Was ist wirklich interessant oder überraschend?</li><li>Zahlen und Vergleiche kommen gut an</li><li>Lieber wenige, dafür gute Fakten</li><li>Quellen kurz prüfen: Stimmt das wirklich?</li></ul></details>`, check: 'Fakten recherchieren & Material auswählen\n<span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Spannende Fakten suchen und überlegen: Wie kann man das mit Bildern oder Modellen zeigen?</span>' },
@@ -952,7 +952,7 @@
       ]
     },
     story: {
-      title: '📋 AG-Ablaufplan · ZEITREISE · 90 Min',
+      title: '📋 AG-Ablaufplan · ZEITREISE · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:8px;">Thema entdecken</div><p style="font-size:0.84rem;color:rgba(255,255,255,0.75);line-height:1.6;margin-bottom:10px;">Wir wählen heute ein Thema und reisen in die Vergangenheit – was haben Menschen früher darüber gedacht? Eine echte Entdeckungsreise!</p><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Begriff oder Thema gemeinsam wählen</li><li>Erste Ideen sammeln: Was wisst ihr schon?</li><li>Was wollen wir herausfinden?</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">💬 Gesprächsimpulse</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Was fällt euch zu dem Begriff ein?</li><li>Was haben Menschen früher damit gemacht?</li><li>Welche Zeit würdet ihr gerne besuchen?</li></ul></details>`, check: 'Thema & erste Ideen besprechen' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:8px;">Zeitreise-Recherche</div>
@@ -967,7 +967,7 @@
       ]
     },
     check: {
-      title: '📋 AG-Ablaufplan · CHECK · 90 Min',
+      title: '📋 AG-Ablaufplan · CHECK · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Eine Frage stellen</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>„Stimmt das wirklich?"</li><li>Gemeinsam eine Hypothese entwickeln</li><li>Was wollen wir testen?</li></ul>`, check: 'Frage & Hypothese entwickeln<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Stimmt das wirklich? Gemeinsam eine Vermutung entwickeln und testen.</span>' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:8px;">Versuch planen</div>
@@ -986,7 +986,7 @@
       ]
     },
     reporter: {
-      title: '📋 AG-Ablaufplan · REPORTER · 90 Min',
+      title: '📋 AG-Ablaufplan · REPORTER · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Was macht ein Reporter?</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Beispiele zeigen</li><li>Rollen besprechen: Wer moderiert, wer wird interviewt?</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💬 Gesprächsideen</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Was macht einen guten Reporter aus?</li><li>Was ist der Unterschied zwischen Moderator und interviewter Person?</li><li>Wo sieht man Reporter im Alltag?</li></ul></details>`, check: 'Rollen & Ablauf besprechen' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:8px;">Vorbereiten</div>
@@ -1006,7 +1006,7 @@
       ]
     },
     intro: {
-      title: '📋 AG-Ablaufplan · INTRO · 90 Min',
+      title: '📋 AG-Ablaufplan · INTRO · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Was ist ein Vorspann?</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Beispiele zeigen</li><li>Gemeinsam überlegen: Wie soll unser Vorspann aussehen?</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💡 Ideen für die Gestaltung</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Welche Farben passen gut zusammen?</li><li>Was soll im Bild zu sehen sein?</li><li>Verschiedene Stop-Motion-Tricks ausprobieren</li><li>Wie sollen unsere Namen eingeblendet werden?</li><li>Mit Abständen experimentieren (nah = groß, weit weg = klein)</li><li>Gegenstände oder Figuren passend anordnen</li><li>Bewegungen langsam und Schritt für Schritt planen</li></ul></details>`, check: 'Idee & Gestaltung besprechen<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Wie soll unser Vorspann aussehen? Farben, Schrift und Bewegungen überlegen.</span>' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Konzept entwickeln</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Filmtitel festlegen</li><li>Hintergrundmaterial auswählen</li><li>Konzept skizzieren</li></ul>`, check: 'Titel & Konzept entwickeln<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Filmtitel festlegen und das Konzept für den Vorspann skizzieren.</span>' },
@@ -1017,7 +1017,7 @@
       ]
     },
     outro: {
-      title: '📋 AG-Ablaufplan · OUTRO · 90 Min',
+      title: '📋 AG-Ablaufplan · OUTRO · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Was ist ein Abspann?</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Beispiele zeigen</li><li>Namen und Danksagungen besprechen</li></ul>`, check: 'Idee & Inhalt besprechen<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Was kommt in den Abspann? Namen, Danksagungen und eigene Ideen besprechen.</span>' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Inhalte zusammenstellen</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Namen der Kinder gestalten</li><li>Danksagung formulieren</li><li>Eigene Ideen einbringen</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💡 Ideen für coole Outro-Texte</summary><div style="margin-top:10px;"><div style="font-size:0.78rem;font-weight:700;color:rgba(125,211,252,0.7);margin-bottom:6px;">Klassisch & schön</div><ul style="margin:0 0 10px 16px;font-size:0.82rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Danke fürs Zuschauen!</li><li>Ende 🎬</li><li>Bis zum nächsten Film!</li><li>Das war unsere Film-AG 😊</li><li>Film ab… und Ende 😄</li></ul><div style="font-size:0.78rem;font-weight:700;color:rgba(125,211,252,0.7);margin-bottom:6px;">Lustig / kindgerecht</div><ul style="margin:0 0 10px 16px;font-size:0.82rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Keine Tiere wurden beim Dreh verletzt 😄</li><li>Ende gut, alles gut 🎬</li><li>Kamera aus. Spaß bleibt 😊</li><li>Fortsetzung folgt… vielleicht 👀</li><li>Wir hoffen, euch hat unser Film gefallen!</li></ul><div style="font-size:0.78rem;font-weight:700;color:rgba(125,211,252,0.7);margin-bottom:6px;">Filmisch / professionell</div><ul style="margin:0 0 10px 16px;font-size:0.82rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Produziert von der Film-AG</li><li>Ein Filmprojekt der Film-AG</li><li>Danke an alle Mitwirkenden</li><li>Idee, Kamera & Schnitt: Die Kinder der AG</li></ul><div style="font-size:0.78rem;font-weight:700;color:rgba(125,211,252,0.7);margin-bottom:6px;">Kreative Ideen für den Abspann</div><ul style="margin:0 0 0 16px;font-size:0.82rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Namen nacheinander einblenden</li><li>Namen über bewegtem Hintergrund</li><li>Stop-Motion-Abspann</li><li>Kinder winken in die Kamera</li><li>Outtakes am Ende zeigen</li><li>„Behind the Scenes" Bilder</li></ul></div></details>`, check: 'Namen & Danksagung zusammenstellen<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Namen aller Mitwirkenden und eine Danksagung für den Abspann zusammenstellen.</span>' },
@@ -1028,7 +1028,7 @@
       ]
     },
     vorstellung: {
-      title: '📋 AG-Ablaufplan · VORSTELLUNG · 90 Min',
+      title: '📋 AG-Ablaufplan · VORSTELLUNG · 90–180 Min',
       phases: [
         { label: 'Einstieg', time: '10 Min', color: '#4338ca', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Was sagen wir über uns?</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Beispielvideo zeigen</li><li>Gemeinsam besprechen: Was stellen wir vor?</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;">💡 Ideen für die Vorstellung</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Name, Alter, Klasse</li><li>Warum bin ich bei der Film-AG?</li><li>Was macht mir Spaß?</li></ul></details>`, check: 'Idee & Inhalt besprechen<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Was kommt in den Abspann? Namen, Danksagungen und eigene Ideen besprechen.</span>' },
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<div style="font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(125,211,252,0.6);margin-bottom:12px;">Text vorbereiten</div><ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Jedes Kind überlegt sich seinen Text</li><li>Name, Alter, Klasse</li><li>Einen persönlichen Satz dazu</li></ul><details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">💡 Ideen für die Vorstellung</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Name, Alter, Klasse</li><li>Warum bin ich bei der Film-AG?</li><li>Was macht mir Spaß?</li></ul></details>`, check: 'Text vorbereiten (Name, Alter, Klasse)<br><span style="font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:400;display:block;margin-top:2px;">Jedes Kind überlegt seinen Text – Name, Alter, Klasse und einen persönlichen Satz.</span>' },
@@ -1064,9 +1064,10 @@
     }, 0);
     const timeEl = document.getElementById('vp-time-total');
     if (totalMin > 0) {
-      const over = totalMin > 90;
-      timeEl.textContent = `⏱ Geplante Zeit: ${totalMin} Min ${over ? '⚠️ über 90 Min!' : 'von 90 Min'}`;
-      timeEl.style.color = over ? '#f87171' : '#34d399';
+      const over = totalMin > 180;
+      const tight = totalMin > 90 && totalMin <= 180;
+      timeEl.textContent = `⏱ Geplante Zeit: ${totalMin} Min ${over ? '⚠️ über 180 Min!' : tight ? '· passt für 2 Stunden ✓' : 'von 90 Min'}`;
+      timeEl.style.color = over ? '#f87171' : tight ? '#f59e0b' : '#34d399';
     } else {
       timeEl.textContent = '';
     }
