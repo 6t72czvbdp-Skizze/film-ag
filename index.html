@@ -452,6 +452,14 @@
           <div class="detail-step"><div class="step-num">3</div><div class="step-text">Rollen und Aufgaben besprechen.</div></div>
           <div class="detail-step"><div class="step-num">4</div><div class="step-text">Zeitplan und Ablauf planen.</div></div>
         </div>
+        <div class="detail-section" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.3);border-radius:12px;padding:12px;">
+          <div style="font-size:0.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#818cf8;margin-bottom:10px;">💡 Gutes Thema – worauf achten?</div>
+          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Man kann eine <strong>Geschichte darüber erzählen</strong> – nicht nur Fakten aufzählen.</div></div>
+          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Es gibt etwas zu <strong>zeigen oder nachzuspielen</strong> – nicht nur reden.</div></div>
+          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Das Thema ist <strong>umsetzbar</strong> – in der Schule oder nah dran.</div></div>
+          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Es ist <strong>spannend genug</strong> – würde ich das selbst gerne anschauen?</div></div>
+          <div class="detail-step"><div class="step-num" style="background:#4338ca;">✓</div><div class="step-text">Es passt zum <strong>Format</strong> – Reporter, Wissen, Zeitreise oder Check.</div></div>
+        </div>
         <div class="detail-section">
           <a onclick="openVP('planung')" style="display:inline-flex; align-items:center; gap:8px; background:rgba(14,165,233,0.15); border:1.5px solid #7dd3fc; border-radius:10px; padding:10px 14px; color:#bae6fd; font-size:0.85rem; font-weight:700; text-decoration:none; margin-top:4px; cursor:pointer;">📋 AG-Ablaufplan öffnen</a>
         </div>
@@ -1104,6 +1112,7 @@
     const arbeitsblaetter = {
       planung:     'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-planung.html',
       praxis:      'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-praxis.html',
+      theorie:     'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-theorie.html',
       reporter:    'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-reporter.html',
       wissen:      'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-wissen.html',
       story:       'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-zeitreise.html',
@@ -1113,30 +1122,16 @@
       vorstellung: 'https://6t72czvbdp-skizze.github.io/Film-ag/arbeitsblatt-vorstellung.html',
     };
     const abUrl = arbeitsblaetter[key];
-    if (key === 'reporter') {
-      html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;">
-  <div style="background:rgba(16,185,129,0.12);border:1.5px solid rgba(16,185,129,0.5);border-radius:12px;padding:14px;">
-    <div style="font-size:0.82rem;font-weight:500;color:#34d399;margin-bottom:10px;">Teste dich!</div>
-    <a href="https://film-ag.netlify.app/arbeitsblatt-reporter.html" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:10px;padding:9px 12px;color:#6ee7b7;font-size:0.82rem;font-weight:700;text-decoration:none;">Zum Arbeitsblatt</a>
-  </div>
-  <div style="background:rgba(139,92,246,0.12);border:1.5px solid rgba(139,92,246,0.5);border-radius:12px;padding:14px;">
-    <div style="font-size:0.82rem;font-weight:500;color:#c4b5fd;margin-bottom:10px;">Material & Beispiele</div>
-    <button onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'flex':'none'" style="display:flex;align-items:center;justify-content:center;width:100%;background:rgba(139,92,246,0.2);border:1.5px solid #8b5cf6;border-radius:10px;padding:9px 12px;color:#c4b5fd;font-size:0.82rem;font-weight:700;cursor:pointer;">Beispiele anzeigen</button>
-    <div style="display:none;flex-direction:column;gap:6px;margin-top:10px;">
-      <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);">Tagesschau für Kinder</div>
-      <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);">logo! Nachrichten (ZDF)</div>
-      <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);">Elternbrief Film-AG</div>
-      <div style="font-size:0.78rem;color:rgba(255,255,255,0.7);">Einverständnis Fotos</div>
-      <a href="https://www.youtube.com/results?search_query=reporter+kinder+nachrichten" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideos auf YouTube</a>
-    </div>
-  </div>
-</div>`;
+    const youtubeLink = key === 'vorstellung' ? `<a href="https://youtu.be/gxgTpFPV1qc?feature=shared" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideo auf YouTube</a>` : key === 'reporter' ? `<a href="https://www.youtube.com/results?search_query=reporter+kinder+nachrichten" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideos auf YouTube</a>` : '';
+    const testeBtn = abUrl
+      ? `<a href="${abUrl}" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:10px;padding:9px 12px;color:#6ee7b7;font-size:0.82rem;font-weight:700;text-decoration:none;">Zum Arbeitsblatt</a>`
+      : `<div style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.2);border-radius:10px;padding:9px 12px;color:rgba(110,231,183,0.4);font-size:0.82rem;font-weight:700;">Bald verfügbar</div>`;
+    if (false) {
     } else {
-      const youtubeLink = key === 'vorstellung' ? `<a href="https://youtu.be/gxgTpFPV1qc?feature=shared" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideo auf YouTube</a>` : '';
       html += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;">
   <div style="background:rgba(16,185,129,0.12);border:1.5px solid rgba(16,185,129,0.5);border-radius:12px;padding:14px;">
     <div style="font-size:0.82rem;font-weight:500;color:#34d399;margin-bottom:10px;">Teste dich!</div>
-    <div style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.2);border-radius:10px;padding:9px 12px;color:rgba(110,231,183,0.4);font-size:0.82rem;font-weight:700;">Bald verfügbar</div>
+    ${testeBtn}
   </div>
   <div style="background:rgba(139,92,246,0.12);border:1.5px solid rgba(139,92,246,0.5);border-radius:12px;padding:14px;">
     <div style="font-size:0.82rem;font-weight:500;color:#c4b5fd;margin-bottom:10px;">Material & Beispiele</div>
