@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporter-Check</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #0c0c14; color: #fff; min-height: 100vh; padding: 20px 16px 60px; }
+  .wrap { max-width: 500px; margin: 0 auto; }
+  .header { background: linear-gradient(135deg, #4338ca, #6d28d9); border-radius: 20px; padding: 22px 20px; margin-bottom: 20px; text-align: center; }
+  .header h1 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
+  .header p { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+  .name-input { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 11px 14px; color: #fff; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; outline: none; margin-bottom: 16px; }
+  .section-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #a78bfa; margin: 20px 0 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(167,139,250,0.2); }
+  .check-item { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px 16px; margin-bottom: 8px; }
+  .check-item.yes { background: rgba(16,185,129,0.12); border-color: #10b981; }
+  .check-item.no  { background: rgba(239,68,68,0.1); border-color: #ef4444; }
+  .check-box { width: 36px; height: 36px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .check-item.yes .check-box { background: #10b981; border-color: #10b981; }
+  .check-item.no  .check-box { background: rgba(239,68,68,0.3); border-color: #ef4444; }
+  .check-text { flex: 1; }
+  .check-title { font-size: 0.92rem; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 2px; }
+  .check-sub { font-size: 0.74rem; color: rgba(255,255,255,0.4); line-height: 1.4; }
+  .yn-row { display: flex; gap: 6px; flex-shrink: 0; }
+  .yn-btn { border: none; border-radius: 8px; padding: 6px 10px; font-size: 0.78rem; font-weight: 800; cursor: pointer; font-family: 'Outfit', sans-serif; }
+  .yn-btn.y { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+  .yn-btn.n { background: rgba(239,68,68,0.15); color: #fca5a5; }
+  .check-item.yes .yn-btn.y { background: #10b981; color: #fff; }
+  .check-item.no  .yn-btn.n { background: #ef4444; color: #fff; }
+  .score-box { background: linear-gradient(135deg, #1e1b4b, #312e81); border: 1px solid rgba(99,102,241,0.3); border-radius: 16px; padding: 20px; margin-top: 20px; text-align: center; display: none; }
+  .score-box.show { display: block; }
+  .score-emoji { font-size: 2.5rem; display: block; margin-bottom: 8px; }
+  .score-num { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 900; color: #a78bfa; }
+  .score-text { font-size: 0.86rem; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.5; }
+  .tip-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6; display: none; }
+  .tip-box.show { display: block; }
+  .reset-btn { margin-top: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px; width: 100%; color: rgba(255,255,255,0.5); font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div style="font-size:2rem;margin-bottom:8px;">📰</div>
+    <h1>Reporter-Check</h1>
+    <p>Schaut euch den Beitrag an und hakt ab!</p>
+    <div style="margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://6t72czvbdp-skizze.github.io/film-ag/reporter-check.html&bgcolor=ffffff&color=000000" style="border-radius:8px;width:90px;height:90px;">
+      <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);">Mit iPad einscannen</div>
+    </div>
+  </div>
+  <input class="name-input" type="text" placeholder="👤 Wer wird bewertet? Name eintragen …">
+
+  <div class="section-label">🎤 Interview & Fragen</div>
+  <div class="check-item" id="item-0"><div class="check-box" id="box-0">·</div><div class="check-text"><div class="check-title">Echte Frage gestellt</div><div class="check-sub">Keine Ja/Nein-Frage – offene Frage die zum Erzählen einlädt</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(0,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(0,'no',event)">✗</button></div></div>
+  <div class="check-item" id="item-1"><div class="check-box" id="box-1">·</div><div class="check-text"><div class="check-title">Antwort vollständig</div><div class="check-sub">Die befragte Person konnte ausreden – kein Abbrechen</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(1,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(1,'no',event)">✗</button></div></div>
+  <div class="check-item" id="item-2"><div class="check-box" id="box-2">·</div><div class="check-text"><div class="check-title">Mikrofon nah genug</div><div class="check-sub">Man hört die Antwort deutlich – kein Rauschen oder Nuscheln</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(2,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(2,'no',event)">✗</button></div></div>
+
+  <div class="section-label">📹 Beitrag & Inhalt</div>
+  <div class="check-item" id="item-3"><div class="check-box" id="box-3">·</div><div class="check-text"><div class="check-title">Klare Einleitung</div><div class="check-sub">Man weiß sofort worum es geht – Ort, Thema, Person</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(3,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(3,'no',event)">✗</button></div></div>
+  <div class="check-item" id="item-4"><div class="check-box" id="box-4">·</div><div class="check-text"><div class="check-title">Thema verständlich erklärt</div><div class="check-sub">Auch jemand der nichts weiß versteht den Beitrag</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(4,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(4,'no',event)">✗</button></div></div>
+  <div class="check-item" id="item-5"><div class="check-box" id="box-5">·</div><div class="check-text"><div class="check-title">Sauberer Abschluss</div><div class="check-sub">Der Beitrag hat ein Ende – kein abruptes Aufhören</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(5,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(5,'no',event)">✗</button></div></div>
+
+  <div class="section-label">🎬 Kamera & Auftritt</div>
+  <div class="check-item" id="item-6"><div class="check-box" id="box-6">·</div><div class="check-text"><div class="check-title">In die Kamera geschaut</div><div class="check-sub">Blickkontakt mit der Kamera beim Sprechen</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(6,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(6,'no',event)">✗</button></div></div>
+  <div class="check-item" id="item-7"><div class="check-box" id="box-7">·</div><div class="check-text"><div class="check-title">Deutlich & ruhig gesprochen</div><div class="check-sub">Laut, klar, nicht zu schnell</div></div><div class="yn-row"><button class="yn-btn y" onclick="setCheck(7,'yes',event)">✓</button><button class="yn-btn n" onclick="setCheck(7,'no',event)">✗</button></div></div>
+
+  <div class="score-box" id="score-box"><span class="score-emoji" id="score-emoji">📰</span><div class="score-num" id="score-num"></div><div class="score-text" id="score-text"></div></div>
+  <div class="tip-box" id="tip-box"></div>
+  <button class="reset-btn" onclick="location.reload()">↺ Nochmal von vorne</button>
+</div>
+<script>
+const state=new Array(8).fill(null);
+const labels=['Echte Frage','Antwort vollständig','Mikrofon nah','Klare Einleitung','Thema erklärt','Sauberer Abschluss','In die Kamera','Deutlich gesprochen'];
+function setCheck(i,v,e){e.stopPropagation();state[i]=v;const it=document.getElementById('item-'+i);const bx=document.getElementById('box-'+i);it.className='check-item '+v;bx.textContent=v==='yes'?'✓':'✗';update();}
+function update(){const ans=state.filter(s=>s!==null).length;const yes=state.filter(s=>s==='yes').length;if(ans<8)return;const sb=document.getElementById('score-box');sb.classList.add('show');document.getElementById('score-num').textContent=yes+' von 8 ✓';let em,tx;if(yes>=7){em='🏆';tx='Klasse Reporter-Arbeit!';}else if(yes>=5){em='⭐';tx='Gut gemacht! Fast perfekt.';}else{em='💪';tx='Weiter üben – ihr schafft das!';}document.getElementById('score-emoji').textContent=em;document.getElementById('score-text').textContent=tx;const no=state.map((s,i)=>s==='no'?labels[i]:null).filter(Boolean);const tb=document.getElementById('tip-box');if(no.length){tb.classList.add('show');tb.innerHTML='🚀 <strong>Nächstes Mal:</strong><br>'+no.map(l=>'· '+l).join('<br>');}}
+</script>
+</body>
+</html>

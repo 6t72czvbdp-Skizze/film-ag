@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamera-Check</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #0c0c14; color: #fff; min-height: 100vh; padding: 20px 16px 60px; }
+  .wrap { max-width: 500px; margin: 0 auto; }
+
+  .header { background: linear-gradient(135deg, #0284c7, #059669); border-radius: 20px; padding: 22px 20px; margin-bottom: 20px; text-align: center; }
+  .header h1 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
+  .header p { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+
+  .name-row { display: flex; gap: 8px; margin-bottom: 16px; }
+  .name-input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 11px 14px; color: #fff; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; outline: none; }
+
+  .section-label { font-size: 0.65rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #7dd3fc; margin: 20px 0 10px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(125,211,252,0.2); }
+
+  .check-item { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px 16px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; user-select: none; }
+  .check-item.yes { background: rgba(16,185,129,0.12); border-color: #10b981; }
+  .check-item.no  { background: rgba(239,68,68,0.1); border-color: #ef4444; }
+
+  .check-box { width: 36px; height: 36px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.2); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.2s; }
+  .check-item.yes .check-box { background: #10b981; border-color: #10b981; }
+  .check-item.no  .check-box { background: rgba(239,68,68,0.3); border-color: #ef4444; }
+
+  .check-text { flex: 1; }
+  .check-title { font-size: 0.92rem; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 2px; }
+  .check-sub { font-size: 0.74rem; color: rgba(255,255,255,0.4); line-height: 1.4; }
+
+  .yn-row { display: flex; gap: 6px; flex-shrink: 0; }
+  .yn-btn { border: none; border-radius: 8px; padding: 6px 10px; font-size: 0.78rem; font-weight: 800; cursor: pointer; font-family: 'Outfit', sans-serif; }
+  .yn-btn.y { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+  .yn-btn.n { background: rgba(239,68,68,0.15); color: #fca5a5; }
+  .check-item.yes .yn-btn.y { background: #10b981; color: #fff; }
+  .check-item.no  .yn-btn.n { background: #ef4444; color: #fff; }
+
+  .score-box { background: linear-gradient(135deg, #052e16, #064e3b); border: 1px solid rgba(52,211,153,0.25); border-radius: 16px; padding: 20px; margin-top: 20px; text-align: center; display: none; }
+  .score-box.show { display: block; }
+  .score-emoji { font-size: 2.5rem; display: block; margin-bottom: 8px; }
+  .score-num { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 900; color: #34d399; }
+  .score-text { font-size: 0.86rem; color: rgba(255,255,255,0.6); margin-top: 6px; line-height: 1.5; }
+
+  .tip-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 14px; margin-top: 10px; font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.6; display: none; }
+  .tip-box.show { display: block; }
+
+  .reset-btn { margin-top: 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px; width: 100%; color: rgba(255,255,255,0.5); font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .header { background: #0284c7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .check-item { background: #f9f9f9 !important; border: 1px solid #ddd !important; }
+    .reset-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div style="font-size:2rem;margin-bottom:8px;">🎬</div>
+    <h1>Kamera-Check</h1>
+    <p>Schaut euch den Film an und hakt ab was geklappt hat!</p>
+  </div>
+
+  <div class="name-row">
+    <input class="name-input" type="text" placeholder="👤 Wer wird bewertet? Name eintragen …" id="name-input">
+  </div>
+
+  <div class="section-label">📷 Kamera & Aufnahme</div>
+
+  <div class="check-item" id="item-0">
+    <div class="check-box" id="box-0">·</div>
+    <div class="check-text">
+      <div class="check-title">In die Kamera geschaut</div>
+      <div class="check-sub">Blickkontakt mit der Kamera – nicht zur Seite oder auf den Boden</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(0,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(0,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-1">
+    <div class="check-box" id="box-1">·</div>
+    <div class="check-text">
+      <div class="check-title">Querformat gefilmt</div>
+      <div class="check-sub">iPad quer halten – nicht hochkant</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(1,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(1,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-2">
+    <div class="check-box" id="box-2">·</div>
+    <div class="check-text">
+      <div class="check-title">Ruhige Kamera</div>
+      <div class="check-sub">iPad ruhig halten – kein Wackeln oder hin und her schwenken</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(2,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(2,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="section-label">💡 Licht & Bild</div>
+
+  <div class="check-item" id="item-3">
+    <div class="check-box" id="box-3">·</div>
+    <div class="check-text">
+      <div class="check-title">Gutes Licht</div>
+      <div class="check-sub">Person gut beleuchtet – Licht von vorne, nicht von hinten</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(3,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(3,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-4">
+    <div class="check-box" id="box-4">·</div>
+    <div class="check-text">
+      <div class="check-title">Kein störender Schatten</div>
+      <div class="check-sub">Kein dunkler Schatten im Gesicht oder hinter der Person</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(4,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(4,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-5">
+    <div class="check-box" id="box-5">·</div>
+    <div class="check-text">
+      <div class="check-title">Aufgeräumter Hintergrund</div>
+      <div class="check-sub">Nichts Ablenkdes im Hintergrund – oder bewusst gewählter Hintergrund</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(5,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(5,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="section-label">🎤 Sprache & Auftritt</div>
+
+  <div class="check-item" id="item-6">
+    <div class="check-box" id="box-6">·</div>
+    <div class="check-text">
+      <div class="check-title">Deutlich gesprochen</div>
+      <div class="check-sub">Laut und klar – jedes Wort verständlich</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(6,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(6,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-7">
+    <div class="check-box" id="box-7">·</div>
+    <div class="check-text">
+      <div class="check-title">Kein Hintergrundlärm</div>
+      <div class="check-sub">Ruhige Umgebung – keine störenden Geräusche</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(7,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(7,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-8">
+    <div class="check-box" id="box-8">·</div>
+    <div class="check-text">
+      <div class="check-title">Nicht zu schnell gesprochen</div>
+      <div class="check-sub">Ruhiges Tempo – kurze Pausen zwischen den Sätzen</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(8,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(8,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="check-item" id="item-9">
+    <div class="check-box" id="box-9">·</div>
+    <div class="check-text">
+      <div class="check-title">Selbstbewusster Auftritt</div>
+      <div class="check-sub">Aufrecht stehen, ruhig bleiben – man merkt dass sie sich trauen</div>
+    </div>
+    <div class="yn-row">
+      <button class="yn-btn y" onclick="setCheck(9,'yes',event)">✓</button>
+      <button class="yn-btn n" onclick="setCheck(9,'no',event)">✗</button>
+    </div>
+  </div>
+
+  <div class="score-box" id="score-box">
+    <span class="score-emoji" id="score-emoji">🎬</span>
+    <div class="score-num" id="score-num"></div>
+    <div class="score-text" id="score-text"></div>
+  </div>
+
+  <div class="tip-box" id="tip-box"></div>
+
+  <button class="reset-btn" onclick="reset()">↺ Nochmal von vorne</button>
+
+</div>
+<script>
+const state = new Array(10).fill(null);
+const TOTAL = 10;
+
+function setCheck(idx, val, e) {
+  e.stopPropagation();
+  state[idx] = val;
+  const item = document.getElementById('item-' + idx);
+  const box  = document.getElementById('box-' + idx);
+  item.className = 'check-item ' + val;
+  box.textContent = val === 'yes' ? '✓' : '✗';
+  updateScore();
+}
+
+function updateScore() {
+  const answered = state.filter(s => s !== null).length;
+  const yes = state.filter(s => s === 'yes').length;
+  const scoreBox = document.getElementById('score-box');
+  const tipBox = document.getElementById('tip-box');
+
+  if (answered < TOTAL) {
+    scoreBox.classList.remove('show');
+    tipBox.classList.remove('show');
+    return;
+  }
+
+  scoreBox.classList.add('show');
+  const pct = Math.round((yes / TOTAL) * 100);
+  document.getElementById('score-num').textContent = yes + ' von ' + TOTAL + ' ✓';
+
+  let emoji, text;
+  if (yes >= 9) { emoji = '🏆'; text = 'Wow – fast perfekt! Der Film könnte direkt gesendet werden.'; }
+  else if (yes >= 7) { emoji = '⭐'; text = 'Sehr gut! Nur noch ein paar Kleinigkeiten verbessern.'; }
+  else if (yes >= 5) { emoji = '👍'; text = 'Guter Anfang! Beim nächsten Mal auf die roten Punkte achten.'; }
+  else { emoji = '💪'; text = 'Mutig dabei sein ist das Wichtigste! Beim nächsten Dreh wird es besser.'; }
+
+  document.getElementById('score-emoji').textContent = emoji;
+  document.getElementById('score-text').textContent = text;
+
+  // Show tips for no-items
+  const noItems = [];
+  const labels = ['In die Kamera schauen','Querformat','Ruhige Kamera','Gutes Licht','Kein Schatten','Hintergrund','Deutlich sprechen','Kein Lärm','Nicht zu schnell','Selbstbewusst'];
+  state.forEach((s,i) => { if(s==='no') noItems.push(labels[i]); });
+  if (noItems.length > 0) {
+    tipBox.classList.add('show');
+    tipBox.innerHTML = '🚀 <strong>Nächstes Mal besser:</strong><br>' + noItems.map(l => '· ' + l).join('<br>');
+  }
+}
+
+function reset() {
+  state.fill(null);
+  for (let i = 0; i < TOTAL; i++) {
+    document.getElementById('item-' + i).className = 'check-item';
+    document.getElementById('box-' + i).textContent = '·';
+  }
+  document.getElementById('score-box').classList.remove('show');
+  document.getElementById('tip-box').classList.remove('show');
+  document.getElementById('name-input').value = '';
+}
+</script>
+</body>
+</html>
