@@ -77,5 +77,8 @@ const labels=['Echte Frage','Antwort vollständig','Mikrofon nah','Klare Einleit
 function setCheck(i,v,e){e.stopPropagation();state[i]=v;const it=document.getElementById('item-'+i);const bx=document.getElementById('box-'+i);it.className='check-item '+v;bx.textContent=v==='yes'?'✓':'✗';update();}
 function update(){const ans=state.filter(s=>s!==null).length;const yes=state.filter(s=>s==='yes').length;if(ans<8)return;const sb=document.getElementById('score-box');sb.classList.add('show');document.getElementById('score-num').textContent=yes+' von 8 ✓';let em,tx;if(yes>=7){em='🏆';tx='Klasse Reporter-Arbeit!';}else if(yes>=5){em='⭐';tx='Gut gemacht! Fast perfekt.';}else{em='💪';tx='Weiter üben – ihr schafft das!';}document.getElementById('score-emoji').textContent=em;document.getElementById('score-text').textContent=tx;const no=state.map((s,i)=>s==='no'?labels[i]:null).filter(Boolean);const tb=document.getElementById('tip-box');if(no.length){tb.classList.add('show');tb.innerHTML='🚀 <strong>Nächstes Mal:</strong><br>'+no.map(l=>'· '+l).join('<br>');}}
 </script>
+  <div style="text-align:center;padding:16px 16px 40px;">
+    <a href="javascript:history.back()" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:10px 20px;color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:700;text-decoration:none;">← Zurück</a>
+  </div>
 </body>
 </html>
