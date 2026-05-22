@@ -11,7 +11,7 @@
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: #0f0f1a;
+    background: #1c1c2e;
     padding: 20px 16px 36px;
     color: #fff;
     min-height: 100vh;
@@ -776,9 +776,9 @@
 </script>
 
 <!-- VP POPUP OVERLAY -->
-<div id="vp-popup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.95); z-index:9999; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:20px 16px 60px;">
+<div id="vp-popup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#1c1c2e; z-index:9999; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:20px 16px 60px;">
   <div style="max-width:680px; margin:0 auto;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; position:sticky; top:0; background:#0f0f1a; padding:12px 0; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; position:sticky; top:0; background:#1c1c2e; padding:12px 0; z-index:10;">
       <div style="display:flex; align-items:center; gap:12px;">
         <span style="font-size:2.2rem; flex-shrink:0;">📋</span>
         <div>
@@ -935,7 +935,7 @@
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">📌 Daran denken</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Fakten vorher recherchieren lassen</li><li>Einfache Sprache verwenden</li></ul></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Recherche & Vorbereitung</span><br>• Fakten recherchieren<br>• Text üben<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Die Kinder bereiten ihre Erklärung vor.</span>' },
         { label: 'Aufgabe II', time: '25 Min', color: '#0284c7', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">🎥 Worauf achten</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Laut und deutlich sprechen</li><li>Etwas zeigen oder nachstellen</li></ul></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Drehen & Erklären</span><br>• Szene aufbauen<br>• Filmen & erklären<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Die Kinder drehen ihren Wissensclip.</span>' },
         { label: 'Fertigstellung', time: '15 Min', color: '#059669', content: `<ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Clip kontrollieren</li><li>Sieht es gut aus?</li><li>Speichern</li></ul><div style="display:flex;align-items:center;gap:8px;margin-top:12px;"><a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/schnitt-check.html','✂️ Schnitt-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;">✅ Checkbox</a></div>`, check: '<span style="font-weight:800;color:#7dd3fc;">Schnitt & Fertigstellen</span><br>• Clip kontrollieren<br>• Speichern<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Der fertige Clip wird gespeichert.</span>' },
-        { label: 'Reflexion', time: '10 Min', color: '#d97706', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">🎬 Abschlussfrage</summary><div style="background:rgba(14,165,233,0.08);border-left:3px solid #0ea5e9;border-radius:6px;padding:10px 12px;margin-top:10px;font-size:0.82rem;color:rgba(255,255,255,0.8);">„Was habt ihr heute gelernt?"</div></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Reflexion & Feedback</span><br>• Was lief gut?<br>• Was verbessern?<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Gemeinsam besprechen was heute geklappt hat.</span>' },
+        { label: 'Reflexion', time: '10 Min', color: '#d97706', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">🎬 Abschlussfrage</summary><div style="background:rgba(14,165,233,0.08);border-left:3px solid #0ea5e9;border-radius:6px;padding:10px 12px;margin-top:10px;font-size:0.82rem;color:rgba(255,255,255,0.8);">„Was habt ihr heute gelernt?"</div></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Rückblick</span><br>• Was lief gut?<br>• Was verbessern?<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Gemeinsam besprechen was heute geklappt hat.</span>' },
       ]
     },
     story: {
@@ -965,7 +965,7 @@
         { label: 'Aufgabe I', time: '20 Min', color: '#0284c7', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">📌 Daran denken</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>Offene Fragen stellen</li><li>Vor dem Interview üben</li></ul></details><ul style="margin:8px 0 0 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Reporterrollen verteilen</li><li>Fragen überlegen & Probe sprechen</li></ul><div style="display:flex;align-items:center;gap:8px;margin-top:12px;"><a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/reporter-check.html','📰 Reporter-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;">✅ Checkbox</a></div>`, check: '<span style="font-weight:800;color:#7dd3fc;">Fragen vorbereiten & planen</span><br>• Reporterrollen verteilen<br>• Fragen üben<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Die Kinder bereiten ihr Interview vor.</span>' },
         { label: 'Aufgabe II', time: '25 Min', color: '#0284c7', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">🎥 Worauf achten</summary><ul style="margin:10px 0 0 16px;font-size:0.83rem;color:rgba(255,255,255,0.8);line-height:1.7;"><li>In die Kamera schauen</li><li>Mikrofon nah genug</li></ul></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Proben & vor Kamera filmen</span><br>• Interview durchführen<br>• Beitrag filmen<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Die Kinder drehen ihr Interview.</span>' },
         { label: 'Fertigstellung', time: '15 Min', color: '#059669', content: `<ul style="margin:0 0 10px 16px;font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.7;"><li>Clip kontrollieren</li><li>Ton gut verständlich?</li><li>Speichern</li></ul>`, check: '<span style="font-weight:800;color:#7dd3fc;">Beitrag fertigstellen</span><br>• Kontrollieren<br>• Speichern<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Der fertige Reporter-Clip wird gespeichert.</span>' },
-        { label: 'Reflexion', time: '10 Min', color: '#d97706', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">🎬 Abschlussfrage</summary><div style="background:rgba(14,165,233,0.08);border-left:3px solid #0ea5e9;border-radius:6px;padding:10px 12px;margin-top:10px;font-size:0.82rem;color:rgba(255,255,255,0.8);">„Was war an eurem Beitrag besonders gut?"</div></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Reflexion & Feedback</span><br>• Was lief gut?<br>• Was verbessern?<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Den Beitrag gemeinsam besprechen.</span>' },
+        { label: 'Reflexion', time: '10 Min', color: '#d97706', content: `<details style="background:rgba(255,255,255,0.05);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.08);"><summary style="font-weight:700;cursor:pointer;color:#7dd3fc;font-size:0.86rem;" onclick="event.stopPropagation()">🎬 Abschlussfrage</summary><div style="background:rgba(14,165,233,0.08);border-left:3px solid #0ea5e9;border-radius:6px;padding:10px 12px;margin-top:10px;font-size:0.82rem;color:rgba(255,255,255,0.8);">„Was war an eurem Beitrag besonders gut?"</div></details>`, check: '<span style="font-weight:800;color:#7dd3fc;">Rückblick</span><br>• Was lief gut?<br>• Was verbessern?<br><span style="font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;display:block;margin-top:4px;">Den Beitrag gemeinsam besprechen.</span>' },
       ]
     },
     outro: {
@@ -1071,7 +1071,7 @@
             ${(key==='praxis' && p.label==='Aufgabe II') ? `<a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/kamera-check.html','🎬 Kamera-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;margin-left:6px;">✅ Checkbox</a>` : ''}
             ${(key==='reporter' && (p.label==='Aufgabe I' || p.label==='Aufgabe II')) ? `<a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/reporter-check.html','📰 Reporter-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;margin-left:6px;">✅ Checkbox</a>` : ''}
             ${(key==='story' && (p.label==='Fertigstellung' || p.label==='Aufgabe II')) ? `<a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/zeitreise-check.html','⏳ Zeitreise-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;margin-left:6px;">✅ Checkbox</a>` : ''}
-            ${(key==='wissen' && (p.label==='Fertigstellung' || p.label==='Aufgabe II')) ? `<a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/schnitt-check.html','✂️ Schnitt-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;margin-left:6px;">✅ Checkbox</a>` : ''}
+            ${(key==='wissen' && p.label==='Aufgabe II') ? `<a href="#" onclick="event.stopPropagation();event.preventDefault();checkQR('https://6t72czvbdp-skizze.github.io/film-ag/schnitt-check.html','✂️ Schnitt-Check')" style="display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);border-radius:20px;padding:5px 14px;color:#93c5fd;font-size:0.75rem;font-weight:700;text-decoration:none;margin-left:6px;">✅ Checkbox</a>` : ''}
             <div id="${detailId}" style="display:none; margin-top:12px; padding:12px 14px; background:rgba(0,0,0,0.25); border-radius:10px; border-left:3px solid ${p.color};">
               <div style="font-size:0.84rem; color:rgba(255,255,255,0.8); line-height:1.65;">${p.content}</div>
             </div>
@@ -1092,7 +1092,7 @@
       vorstellung: 'https://6t72czvbdp-skizze.github.io/film-ag/arbeitsblatt-vorstellung.html',
     };
     const abUrl = arbeitsblaetter[key];
-    const youtubeLink = key === 'vorstellung' ? `<a href="https://youtu.be/gxgTpFPV1qc?feature=shared" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideo auf YouTube</a>` : key === 'reporter' ? `<a href="https://www.youtube.com/results?search_query=reporter+kinder+nachrichten" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideos auf YouTube</a>` : '';
+    const youtubeLink = key === 'vorstellung' ? `<a href="https://youtu.be/gxgTpFPV1qc?feature=shared" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideo auf YouTube</a>` : key === 'reporter' ? `<a href="https://www.youtube.com/results?search_query=reporter+kinder+nachrichten" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideos auf YouTube</a>` : key === 'wissen' ? `<a href="https://pixabay.com/de/" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">🖼️ Pixabay öffnen</a>` : '';
     const testeBtn = abUrl
       ? `<a href="${abUrl}" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:10px;padding:9px 12px;color:#6ee7b7;font-size:0.82rem;font-weight:700;text-decoration:none;">Zum Arbeitsblatt</a>`
       : `<div style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.2);border-radius:10px;padding:9px 12px;color:rgba(110,231,183,0.4);font-size:0.82rem;font-weight:700;">Bald verfügbar</div>`;
@@ -1129,37 +1129,24 @@
     const stimmungsUrl = `https://6t72czvbdp-skizze.github.io/film-ag/beobachtung.html?thema=${encodeURIComponent(data.title.replace('📋 AG-Ablaufplan · ','').replace(/ · \d+.*$/, ''))}`;
 
     html += `
-      <div style="display:flex;align-items:center;gap:12px;margin:20px 0 12px;">
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.08);"></div>
-        <div style="font-size:0.68rem;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:2px;text-transform:uppercase;flex-shrink:0;">Reflexion & Feedback</div>
-        <div style="flex:1;height:1px;background:rgba(255,255,255,0.08);"></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:0px;">
-
-        <!-- Links: AG-Team Eindruck -->
-        <a href="${stimmungsUrl}" target="_blank" style="text-decoration:none;background:linear-gradient(160deg,#052e16,#065f46);border:1.5px solid rgba(16,185,129,0.45);border-radius:18px;padding:18px 16px;display:flex;flex-direction:column;gap:10px;">
-          <div style="font-size:1.9rem;">🎯</div>
-          <div>
-            <div style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:900;color:#34d399;line-height:1.2;">AG-Team Eindruck</div>
-            <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-top:4px;line-height:1.5;">Einschätzung der Kinder</div>
-          </div>
-          <div style="margin-top:auto;background:rgba(16,185,129,0.25);border-radius:10px;padding:8px 12px;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#a7f3d0;text-align:center;">öffnen ↗</div>
-        </a>
-
-        <!-- Rechts: zwei Reflexions-Buttons gestapelt -->
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div onclick="rfxOpen('${rfxId}','meine')" style="background:rgba(192,38,211,0.1);border:1.5px solid rgba(192,38,211,0.38);border-radius:14px;padding:15px 14px;cursor:pointer;flex:1;display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.3rem;">✍️</span>
+      <div style="background:rgba(255,255,255,0.025);border-radius:24px;padding:18px 16px;border:1px solid rgba(255,255,255,0.05);margin-top:20px;">
+        <div style="font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:800;color:rgba(255,255,255,0.18);letter-spacing:1px;text-align:center;margin-bottom:14px;">Wie lief die Stunde?</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="${stimmungsUrl}" target="_blank" style="display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#064e3b,#065f46);border-radius:18px;padding:16px 18px;text-decoration:none;">
+            <span style="font-size:1.8rem;">🎯</span>
             <div>
-              <div style="font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;color:#e879f9;">Meine Reflexion</div>
-              <div style="font-size:0.68rem;color:rgba(255,255,255,0.32);margin-top:3px;">▼ aufklappen</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.92rem;font-weight:900;color:#fff;">AG-Team Eindruck</div>
+              <div style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:2px;">Einschätzung der Kinder öffnen →</div>
             </div>
-          </div>
-          <div onclick="rfxOpen('${rfxId}','kinder')" style="background:rgba(14,165,233,0.1);border:1.5px solid rgba(14,165,233,0.38);border-radius:14px;padding:15px 14px;cursor:pointer;flex:1;display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.3rem;">🗣️</span>
-            <div>
-              <div style="font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;color:#7dd3fc;">Kinder-Feedback</div>
-              <div style="font-size:0.68rem;color:rgba(255,255,255,0.32);margin-top:3px;">▼ aufklappen</div>
+          </a>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div onclick="rfxOpen('${rfxId}','meine')" style="background:rgba(192,38,211,0.12);border:1px solid rgba(192,38,211,0.25);border-radius:16px;padding:16px;cursor:pointer;text-align:center;">
+              <div style="font-size:1.3rem;margin-bottom:6px;">✍️</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#e879f9;line-height:1.3;">Meine<br>Reflexion</div>
+            </div>
+            <div onclick="rfxOpen('${rfxId}','kinder')" style="background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.25);border-radius:16px;padding:16px;cursor:pointer;text-align:center;">
+              <div style="font-size:1.3rem;margin-bottom:6px;">🗣️</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#7dd3fc;line-height:1.3;">Kinder-<br>Feedback</div>
             </div>
           </div>
         </div>
