@@ -1221,7 +1221,7 @@
       vorstellung: 'https://6t72czvbdp-skizze.github.io/film-ag/arbeitsblatt-vorstellung.html',
     };
     const abUrl = arbeitsblaetter[key];
-    const youtubeLink = key === 'intro' ? `<div id="intro-beispiele-${Date.now()}" style="display:none;"></div><a href="#" onclick="event.stopPropagation();event.preventDefault();(function(el){var p=el.previousSibling;if(p.style.display==='block'){p.style.display='none';el.textContent='Beispiele anzeigen ▼';}else{p.innerHTML='<div style=\\'display:flex;flex-direction:column;gap:8px;margin-top:8px;\\'><video controls playsinline style=\\'width:100%;border-radius:8px;background:#000;\\' src=\\'media/intro_video.mp4\\'></video><img src=\\'media/intro_storyboard.jpg\\' style=\\'width:100%;border-radius:8px;\\' loading=\\'lazy\\'><img src=\\'media/intro_hintergrund.jpg\\' style=\\'width:100%;border-radius:8px;\\' loading=\\'lazy\\'></div>';p.style.display='block';el.textContent='Beispiele schließen ▲';}})(this)" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.4);border-radius:8px;padding:8px;color:#fca5a5;font-size:0.76rem;font-weight:800;text-decoration:none;">Beispiele anzeigen ▼</a>` : key === 'vorstellung' ? `<a href="https://youtu.be/gxgTpFPV1qc?feature=shared" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideo auf YouTube</a>` : key === 'reporter' ? `<a href="https://www.youtube.com/results?search_query=reporter+kinder+nachrichten" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideos auf YouTube</a>` : key === 'wissen' ? `<a href="https://pixabay.com/de/" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">🖼️ Pixabay öffnen</a>` : '';
+    const youtubeLink = key === 'intro' ? `<a href="#" onclick="event.stopPropagation();event.preventDefault();showIntroBeispiele()" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.4);border-radius:8px;padding:8px;color:#fca5a5;font-size:0.76rem;font-weight:800;text-decoration:none;">🎬 Beispiele ansehen</a>` : key === 'vorstellung' ? `<a href="https://youtu.be/gxgTpFPV1qc?feature=shared" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideo auf YouTube</a>` : key === 'reporter' ? `<a href="https://www.youtube.com/results?search_query=reporter+kinder+nachrichten" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">▶ Beispielvideos auf YouTube</a>` : key === 'wissen' ? `<a href="https://pixabay.com/de/" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;">🖼️ Pixabay öffnen</a>` : '';
     const testeBtn = abUrl
       ? `<a href="${abUrl}" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:10px;padding:9px 12px;color:#6ee7b7;font-size:0.82rem;font-weight:700;text-decoration:none;">Zum Arbeitsblatt</a>`
       : `<div style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.2);border-radius:10px;padding:9px 12px;color:rgba(110,231,183,0.4);font-size:0.82rem;font-weight:700;">Bald verfügbar</div>`;
@@ -1390,6 +1390,60 @@ function checkQR(url, title) {
     </div>`;
   document.body.appendChild(ov);
   ov.addEventListener('click', function(e){ if(e.target===ov) document.body.removeChild(ov); });
+}
+
+function showIntroBeispiele() {
+  var ov = document.getElementById('intro-beispiele-ov');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'intro-beispiele-ov';
+    ov.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.92);z-index:99999;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:20px 16px 40px;';
+    ov.innerHTML = `
+      <div style="max-width:500px;margin:0 auto;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;position:sticky;top:0;background:rgba(0,0,0,0.92);padding:10px 0;z-index:10;">
+          <button onclick="document.getElementById('intro-beispiele-ov').remove()" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:7px 16px;color:rgba(255,255,255,0.7);font-size:0.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;">‹ Zurück</button>
+          <div style="text-align:right;">
+            <div style="font-size:0.62rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);">INTRO · Beispiele</div>
+            <div style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:900;color:#fff;margin-top:2px;">🎬 Herr Hoss präsentiert</div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:16px;overflow:hidden;margin-bottom:10px;">
+          <div style="padding:10px 14px 6px;font-size:0.62rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">▶ Beispielvideo</div>
+          <video controls playsinline style="width:100%;display:block;background:#000;max-height:280px;" src="media/intro_video.mp4"></video>
+        </div>
+
+        <!-- Bilder -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;">
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+            <div style="padding:8px 12px 4px;font-size:0.6rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Storyboard</div>
+            <img src="media/intro_storyboard.jpg" style="width:100%;display:block;" loading="lazy">
+          </div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;">
+            <div style="padding:8px 12px 4px;font-size:0.6rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Hintergrund</div>
+            <img src="media/intro_hintergrund.jpg" style="width:100%;display:block;" loading="lazy">
+          </div>
+        </div>
+
+        <!-- QR Code -->
+        <div style="background:linear-gradient(135deg,#0c1a2e,#0f2240);border:1.5px solid rgba(99,102,241,0.35);border-radius:18px;padding:16px;text-align:center;">
+          <div style="font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(129,140,248,0.6);margin-bottom:4px;">📱 Für die Kinder</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;margin-bottom:12px;">QR-Code scannen & Beispiele ansehen</div>
+          <div style="background:#fff;border-radius:12px;padding:12px;display:inline-block;margin-bottom:12px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://6t72czvbdp-skizze.github.io/film-ag/media/intro_video.mp4&color=1c1c2e&bgcolor=ffffff" style="width:160px;height:160px;display:block;" alt="QR Code">
+          </div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.35);line-height:1.6;">iPad draufhalten → Video direkt abspielen</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">
+            <a href="https://6t72czvbdp-skizze.github.io/film-ag/media/intro_storyboard.jpg" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:8px;color:rgba(255,255,255,0.6);font-size:0.72rem;font-weight:700;text-decoration:none;">🖼️ Storyboard</a>
+            <a href="https://6t72czvbdp-skizze.github.io/film-ag/media/intro_hintergrund.jpg" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:8px;color:rgba(255,255,255,0.6);font-size:0.72rem;font-weight:700;text-decoration:none;">🎨 Hintergrund</a>
+          </div>
+        </div>
+      </div>`;
+    document.body.appendChild(ov);
+  } else {
+    ov.remove();
+  }
 }
 
 function rfxOpen(id, tab) {
