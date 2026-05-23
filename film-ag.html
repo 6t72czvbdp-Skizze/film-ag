@@ -1261,7 +1261,7 @@
           <div style="writing-mode:vertical-lr; transform:rotate(180deg); background:${p.color}; color:#fff; font-family:'Outfit',sans-serif; font-size:0.72rem; font-weight:800; padding:10px 8px; display:flex; align-items:center; justify-content:center; min-width:32px; flex-shrink:0;">${p.label}</div>
           <div class="phase-inner" style="flex:1; background:rgba(255,255,255,0.06); padding:12px 14px; transition:background 0.3s;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
-              <div style="font-size:0.75rem; font-weight:700; color:#34d399;">${p.time}</div>
+              <div style="font-size:0.75rem; font-weight:700; color:#34d399;" contenteditable="true" onclick="event.stopPropagation()" title="Antippen zum Bearbeiten" style="outline:none; min-width:40px;">${p.time}</div>
               <span class="check-icon" style="font-size:1.1rem; opacity:0.25; transition:all 0.2s;">☐</span>
             </div>
             <div style="font-size:0.88rem; font-weight:400; color:rgba(255,255,255,0.9); line-height:1.5; margin-bottom:4px;">${p.check.replace(/\n/g, '<br>')}</div>
