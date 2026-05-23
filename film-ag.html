@@ -3,27 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aufbau der Film-AG</title>
+<title>Projekt Film-AG</title>
+<meta name="description" content="Von der Idee zum fertigen Film – Konzept & Ablaufplan der Film-AG">
+
+<!-- Open Graph / Link Preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projekt Film-AG">
+<meta property="og:description" content="Von der Idee zum fertigen Film">
+<meta property="og:url" content="https://6t72czvbdp-skizze.github.io/film-ag/film-ag.html">
+<meta property="og:image" content="https://6t72czvbdp-skizze.github.io/film-ag/media/intro_storyboard.jpg">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter/iMessage Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projekt Film-AG">
+<meta name="twitter:description" content="Von der Idee zum fertigen Film">
+<meta name="twitter:image" content="https://6t72czvbdp-skizze.github.io/film-ag/media/intro_storyboard.jpg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap');
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  :root { --bg: #1c1c2e; }
+
+  #vp-popup { background: #1c1c2e; }
+
   body {
     font-family: 'DM Sans', sans-serif;
-    background: #1c1c2e;
+    background: var(--bg);
     padding: 20px 16px 36px;
     color: #fff;
     min-height: 100vh;
   }
 
   @media (min-width: 768px) {
+    :root { --bg: #2a2a3e; }
     body { background: #2a2a3e; }
-    #vp-popup { background: #2a2a3e !important; }
+    #vp-popup { background: #2a2a3e; }
   }
   @media (min-width: 1024px) {
+    :root { --bg: #32324a; }
     body { background: #32324a; }
-    #vp-popup { background: #32324a !important; }
+    #vp-popup { background: #32324a; }
   }
 
   .wrap { max-width: 680px; margin: 0 auto; }
@@ -785,9 +806,9 @@
 </script>
 
 <!-- VP POPUP OVERLAY -->
-<div id="vp-popup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:#1c1c2e; z-index:9999; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:20px 16px 60px;">
+<div id="vp-popup" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; z-index:9999; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:20px 16px 60px;">
   <div style="max-width:680px; margin:0 auto;">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; position:sticky; top:0; background:#1c1c2e; padding:12px 0; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; position:sticky; top:0; background:inherit; padding:12px 0; z-index:10;">
       <div style="display:flex; align-items:center; gap:12px;">
         <span style="font-size:2.2rem; flex-shrink:0;">📋</span>
         <div>
