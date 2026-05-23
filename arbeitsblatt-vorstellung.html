@@ -51,7 +51,7 @@
   @media print {
     body { background: #fff; color: #000; padding: 10mm; }
     .header { background: #c026d3 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .btn-row, .reset-btn, .feedback, .result-box { display: none !important; }
+    .btn-row, .reset-btn, .feedback, .result-box, .back-btn-wrap { display: none !important; }
     .q-card, .write-card, .name-box { background: #f9f9f9 !important; border: 1px solid #ddd !important; color: #000 !important; }
     .q-text, .option-text { color: #000 !important; }
     .option { border: 1px solid #ccc !important; background: #fff !important; }
@@ -60,6 +60,9 @@
 </style>
 </head>
 <body>
+<div class="back-btn-wrap" style="padding:16px 16px 8px;max-width:680px;margin:0 auto;text-align:center;">
+  <a href="https://6t72czvbdp-skizze.github.io/film-ag/film-ag.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:8px 18px;color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:700;text-decoration:none;">‹ Zurück ins Menü</a>
+</div>
 <div class="wrap">
   <div class="header">
     <span class="emoji">⭐</span>
@@ -70,14 +73,11 @@
       <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);">Mit iPad einscannen</div>
     </div>
   </div>
-
   <div class="name-box">
     <label>👤 Name:</label>
     <input type="text" placeholder="Dein Name hier ...">
   </div>
-
   <div class="section-label">🎯 Teil 1 – Wissen testen</div>
-
   <div class="q-card">
     <div class="q-num">Frage 1 von 4</div>
     <div class="q-text">Was ist der Clip Vorstellung?</div>
@@ -88,7 +88,6 @@
     </div>
     <div class="feedback" id="fb1"></div>
   </div>
-
   <div class="q-card">
     <div class="q-num">Frage 2 von 4</div>
     <div class="q-text">Was ist wichtig wenn man sich vor der Kamera vorstellt?</div>
@@ -99,7 +98,6 @@
     </div>
     <div class="feedback" id="fb2"></div>
   </div>
-
   <div class="q-card">
     <div class="q-num">Frage 3 von 4</div>
     <div class="q-text">Warum ist der Vorstellungs-Clip wichtig für den Film?</div>
@@ -110,7 +108,6 @@
     </div>
     <div class="feedback" id="fb3"></div>
   </div>
-
   <div class="q-card">
     <div class="q-num">Frage 4 von 4</div>
     <div class="q-text">Was tust du wenn du beim Filmen einen Fehler machst?</div>
@@ -121,34 +118,28 @@
     </div>
     <div class="feedback" id="fb4"></div>
   </div>
-
   <div class="section-label">✏️ Teil 2 – Mein Vorstellungstext</div>
-
   <div class="write-card">
     <div class="q-num">Aufgabe 5</div>
-    <div class="q-text">Schreibe deinen eigenen Vorstellungstext auf. Was sagst du in die Kamera?</div>
+    <div class="q-text">Schreibe deinen eigenen Vorstellungstext auf.</div>
     <textarea rows="5" placeholder="Hallo! Ich heiße ... &#10;Ich bin ... Jahre alt und gehe in die Klasse ... &#10;In der Film-AG mache ich am liebsten ...&#10;Ich freue mich auf ..."></textarea>
     <div class="hint">💡 Tipp: Ein besonderer Satz am Ende macht deinen Auftritt unvergesslich!</div>
   </div>
-
   <div class="write-card">
     <div class="q-num">Aufgabe 6</div>
-    <div class="q-text">Was sind deine Stärken im Filmteam? Kreuze an was auf dich zutrifft und schreibe warum.</div>
+    <div class="q-text">Was sind deine Stärken im Filmteam?</div>
     <textarea rows="5" placeholder="🎥 Kamera – weil ich ...&#10;🎤 Moderation – weil ich ...&#10;✂️ Schnitt – weil ich ...&#10;🎭 Schauspiel – weil ich ...&#10;💡 Ideen-Team – weil ich ..."></textarea>
   </div>
-
   <div class="write-card">
     <div class="q-num">Aufgabe 7 – Zusatz ⭐</div>
     <div class="q-text">Schreibe 3 Dinge die du in der Film-AG lernen möchtest.</div>
     <textarea rows="4" placeholder="1. Ich möchte lernen wie man ...&#10;2. Ich möchte lernen wie man ...&#10;3. Ich möchte lernen wie man ..."></textarea>
     <div class="hint">💡 In der Film-AG lernt man viel über Technik, Kreativität und Teamarbeit!</div>
   </div>
-
   <div class="btn-row">
     <button class="submit-btn" onclick="auswerten()">⭐ Auswerten</button>
     <button class="print-btn" onclick="window.print()">🖨️ Als PDF drucken</button>
   </div>
-
   <div class="result-box" id="result">
     <span class="result-emoji" id="result-emoji">⭐</span>
     <div class="result-score" id="result-score"></div>
@@ -181,8 +172,5 @@
     result.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
 </script>
-  <div style="text-align:center;padding:20px 16px 40px;">
-    <a href="https://6t72czvbdp-skizze.github.io/film-ag/film-ag.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:10px 20px;color:rgba(255,255,255,0.7);font-size:0.85rem;font-weight:700;text-decoration:none;">← Zurück ins Menü</a>
-  </div>
 </body>
 </html>
