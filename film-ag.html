@@ -278,6 +278,8 @@
     color: #fff;
     margin-top: 1px;
   }
+  .ph2 .step-num { background: #c026d3; }
+  .ph2 .detail-section .schwerpunkt-badge { background: rgba(192,38,211,0.2); border-color: #c026d3; color: #e879f9; }
   .step-text {
     font-size: 0.87rem;
     line-height: 1.55;
@@ -1357,8 +1359,8 @@
 
       <!-- Aufklappbare Reflexions-Panels -->
       <div id="rfx-panel-${rfxId}" style="display:none;margin-top:8px;">
-        <div id="box-${rfxId}" style="background:#1f1320;border:1.5px solid #c026d3;border-radius:16px;overflow:hidden;">
-          <div id="hdr-${rfxId}" style="background:#c026d3;padding:11px 16px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:space-between;">
+        <div id="box-${rfxId}" style="background:#0c1a2e;border:1.5px solid #0ea5e9;border-radius:16px;overflow:hidden;">
+          <div id="hdr-${rfxId}" style="background:#0ea5e9;padding:11px 16px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:space-between;">
             <div style="display:flex;align-items:center;gap:8px;"><span id="rfx-icon-${rfxId}">✍️</span><span id="rfx-title-${rfxId}">Meine Reflexion</span></div>
             <span onclick="document.getElementById('rfx-panel-${rfxId}').style.display='none'" style="cursor:pointer;opacity:0.6;font-size:0.85rem;">✕</span>
           </div>
@@ -1546,9 +1548,9 @@ function rfxOpen(id, tab) {
   // tab wechseln
   document.getElementById('meine-'+id).style.display = isMeine ? 'block' : 'none';
   document.getElementById('kinder-'+id).style.display = isMeine ? 'none' : 'block';
-  box.style.borderColor = isMeine ? '#c026d3' : '#0284c7';
-  box.style.background = isMeine ? '#1f1320' : '#0c1a2e';
-  hdr.style.background = isMeine ? '#c026d3' : '#0284c7';
+  box.style.borderColor = isMeine ? '#0ea5e9' : '#c026d3';
+  box.style.background = isMeine ? '#0c1a2e' : '#1f1320';
+  hdr.style.background = isMeine ? '#0ea5e9' : '#c026d3';
   icon.textContent = isMeine ? '✍️' : '🗣️';
   title.textContent = isMeine ? 'Meine Reflexion' : 'Kinder-Feedback';
 }
