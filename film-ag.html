@@ -1337,24 +1337,24 @@
     const stimmungsUrl = `https://6t72czvbdp-skizze.github.io/film-ag/beobachtung.html?thema=${encodeURIComponent(data.title.replace('📋 AG-Ablaufplan · ','').replace(/ · \d+.*$/, ''))}`;
 
     html += `
-      <div style="background:linear-gradient(135deg,#0c1a2e,#0f2240);border:1.5px solid rgba(99,102,241,0.35);border-radius:24px;padding:18px 16px;margin-top:20px;">
-        <div style="font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:800;color:rgba(129,140,248,0.6);letter-spacing:2px;text-transform:uppercase;text-align:center;margin-bottom:14px;">Wie lief die Stunde?</div>
+      <div style="background:rgba(255,255,255,0.16);border:2.5px solid rgba(255,255,255,0.28);border-radius:20px;padding:22px 20px;margin-top:20px;">
+        <div style="font-family:'Outfit',sans-serif;font-size:0.65rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;">Wie lief die Stunde?</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="${stimmungsUrl}" target="_blank" style="display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#064e3b,#065f46);border-radius:18px;padding:16px 18px;text-decoration:none;">
-            <span style="font-size:1.8rem;">🎯</span>
+          <a href="${stimmungsUrl}" target="_blank" style="display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.85);border-radius:14px;padding:14px 16px;text-decoration:none;">
+            <span style="font-size:2.4rem;">🎯</span>
             <div>
-              <div style="font-family:'Outfit',sans-serif;font-size:0.92rem;font-weight:900;color:#fff;">AG-Team Eindruck</div>
-              <div style="font-size:0.7rem;color:rgba(255,255,255,0.45);margin-top:2px;">Einschätzung der Kinder öffnen →</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:900;color:#333;">AG-Team Eindruck</div>
+              <div style="font-size:0.7rem;color:rgba(0,0,0,0.45);margin-top:2px;">Einschätzung der Kinder öffnen →</div>
             </div>
           </a>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            <div onclick="rfxOpen('${rfxId}','meine')" style="background:rgba(192,38,211,0.12);border:1px solid rgba(192,38,211,0.25);border-radius:16px;padding:16px;cursor:pointer;text-align:center;">
-              <div style="font-size:1.3rem;margin-bottom:6px;">✍️</div>
-              <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#e879f9;line-height:1.3;">Meine<br>Reflexion</div>
+            <div onclick="rfxOpen('${rfxId}','meine')" style="background:rgba(14,165,233,0.75);border:1.5px solid #0ea5e9;border-radius:12px;padding:14px;cursor:pointer;text-align:center;">
+              <div style="font-size:1.2rem;margin-bottom:6px;">✍️</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#fff;line-height:1.3;">Meine<br>Reflexion</div>
             </div>
-            <div onclick="rfxOpen('${rfxId}','kinder')" style="background:rgba(14,165,233,0.12);border:1px solid rgba(14,165,233,0.25);border-radius:16px;padding:16px;cursor:pointer;text-align:center;">
-              <div style="font-size:1.3rem;margin-bottom:6px;">🗣️</div>
-              <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#7dd3fc;line-height:1.3;">Kinder-<br>Feedback</div>
+            <div onclick="rfxOpen('${rfxId}','kinder')" style="background:rgba(192,38,211,0.75);border:1.5px solid #c026d3;border-radius:12px;padding:14px;cursor:pointer;text-align:center;">
+              <div style="font-size:1.2rem;margin-bottom:6px;">🗣️</div>
+              <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:800;color:#fff;line-height:1.3;">Kinder-<br>Feedback</div>
             </div>
           </div>
         </div>
