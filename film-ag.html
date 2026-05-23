@@ -128,8 +128,8 @@
   .ph2 .phase-header { background: #c026d3; }
   .ph3 { background: #0f1f2e; border: 1.5px solid #0ea5e9; }
   .ph3 .phase-header { background: #0ea5e9; }
-  .ph4 { background: #0d1f18; border: 1.5px solid #10b981; }
-  .ph4 .phase-header { background: #10b981; }
+  .ph4 { background: transparent; border: none; }
+  .ph4 .phase-header { background: rgba(255,255,255,0.06); }
 
   /* ── CARDS ── */
   .card {
@@ -692,33 +692,18 @@
 
   <!-- PHASE 4 -->
   <div class="phase ph4">
-    <div class="phase-header">
-      <div class="phase-num" style="font-size:1.3rem;">🏆</div>
-      <div>
-        <span class="phase-tag">Abschluss</span>
-        <div class="phase-title">Unser Film</div>
-      </div>
-    </div>
-    <div class="phase-body">
-      <p class="phase-desc">Die besten Clips der Kinder werden gemeinsam ausgewählt, zusammengeschnitten und zu einem fertigen Film zusammengestellt.</p>
-
-      <div class="flow-row" style="align-items:stretch; margin-bottom:14px;">
-        <div class="flow-step" style="border:2px solid rgba(255,255,255,0.25); border-radius:12px;">
-          <span class="f-icon">📷</span>
-          <span class="f-label">Ideen & Planung</span>
-        </div>
-        <div class="flow-arr">→</div>
-        <div class="flow-step" style="border:2px solid rgba(255,255,255,0.25); border-radius:12px;">
-          <span class="f-icon">💻</span>
-          <span class="f-label">Schneiden & Bearbeiten</span>
-        </div>
-        <div class="flow-arr">→</div>
-        <div class="flow-step" style="border:2px solid rgba(251,191,36,0.6); border-radius:12px; background:rgba(245,158,11,0.15);">
-          <span class="f-icon">🎬</span>
-          <span class="f-label" style="line-height:1.3; font-family:'Outfit',sans-serif;">Unser<br>Film</span>
+    <div class="phase-body" style="padding-top:0;">
+      <div style="background:linear-gradient(135deg,#7c3aed 0%,#c026d3 50%,#e11d48 100%);border-radius:16px;padding:20px;text-align:center;border:5px solid rgba(255,255,255,0.6);">
+        <div style="font-size:0.6rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(254,243,199,0.5);margin-bottom:8px;">Abschluss</div>
+        <div style="font-size:2.2rem;margin-bottom:6px;">🏆</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:6px;">Unser Film</div>
+        <div style="font-size:0.82rem;color:rgba(254,243,199,0.7);line-height:1.6;margin-bottom:14px;">Alle Clips werden gemeinsam ausgewählt, zusammengeschnitten und fertiggestellt.</div>
+        <div style="display:flex;justify-content:center;align-items:center;gap:16px;font-size:1.6rem;">
+          <span>📷</span><span style="color:rgba(255,255,255,0.3);font-size:1rem;">→</span>
+          <span>✂️</span><span style="color:rgba(255,255,255,0.3);font-size:1rem;">→</span>
+          <span>🎬</span>
         </div>
       </div>
-
     </div>
   </div>
 
