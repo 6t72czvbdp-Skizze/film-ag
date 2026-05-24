@@ -278,8 +278,6 @@
     color: #fff;
     margin-top: 1px;
   }
-  .ph2 .step-num { background: #c026d3; }
-  .ph2 .detail-section .schwerpunkt-badge { background: rgba(192,38,211,0.2); border-color: #c026d3; color: #e879f9; }
   .step-text {
     font-size: 0.87rem;
     line-height: 1.55;
@@ -1263,7 +1261,7 @@
           <div style="writing-mode:vertical-lr; transform:rotate(180deg); background:${p.color}; color:#fff; font-family:'Outfit',sans-serif; font-size:0.72rem; font-weight:800; padding:10px 8px; display:flex; align-items:center; justify-content:center; min-width:32px; flex-shrink:0;">${p.label}</div>
           <div class="phase-inner" style="flex:1; background:rgba(255,255,255,0.06); padding:12px 14px; transition:background 0.3s;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
-              <div style="font-size:0.75rem; font-weight:700; color:#34d399;" contenteditable="true" onclick="event.stopPropagation()" title="Antippen zum Bearbeiten" style="outline:none; min-width:40px;">${p.time}</div>
+              <div style="font-size:0.75rem; font-weight:700; color:#34d399;">${p.time}</div>
               <span class="check-icon" style="font-size:1.1rem; opacity:0.25; transition:all 0.2s;">☐</span>
             </div>
             <div style="font-size:0.88rem; font-weight:400; color:rgba(255,255,255,0.9); line-height:1.5; margin-bottom:4px;">${p.check.replace(/\n/g, '<br>')}</div>
@@ -1298,31 +1296,24 @@
     } else {
       html += `
 <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.09);margin-top:6px;display:flex;">
-  <div style="width:48px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.5rem;">⭐</div>
+  <div style="width:44px;background:linear-gradient(180deg,#059669,#7c3aed);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+    <span style="font-family:'Outfit',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fff;writing-mode:vertical-rl;transform:rotate(180deg);">Material</span>
+  </div>
   <div style="flex:1;background:rgba(255,255,255,0.03);padding:12px 14px;">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-      <div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="font-size:0.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#34d399;">⚠️ Teste dich</div>
         ${abUrl
-          ? `<a href="${abUrl}" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(135deg,#065f46,#047857);border-radius:12px;padding:14px 10px;text-decoration:none;">
-               <span style="font-size:0.65rem;font-weight:800;letter-spacing:2px;color:rgba(52,211,153,0.8);text-transform:uppercase;">Fertig?</span>
-               <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;">Teste dich! →</span>
-             </a>`
-          : `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;background:rgba(16,185,129,0.05);border:1.5px solid rgba(16,185,129,0.15);border-radius:12px;padding:14px 10px;opacity:0.4;">
-               <span style="font-size:0.65rem;font-weight:800;letter-spacing:2px;color:rgba(52,211,153,0.8);text-transform:uppercase;">Fertig?</span>
-               <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;">Bald verfügbar</span>
-             </div>`
+          ? `<a href="${abUrl}" target="_blank" style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.2);border:1.5px solid #10b981;border-radius:8px;padding:8px;color:#6ee7b7;font-size:0.76rem;font-weight:800;text-decoration:none;">Zum Arbeitsblatt →</a>`
+          : `<div style="display:flex;align-items:center;justify-content:center;background:rgba(16,185,129,0.05);border:1.5px solid rgba(16,185,129,0.18);border-radius:8px;padding:8px;color:rgba(110,231,183,0.3);font-size:0.76rem;font-weight:800;">Bald verfügbar</div>`
         }
       </div>
-      <div>
+      <div style="display:flex;flex-direction:column;gap:5px;">
+        <div style="font-size:0.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#c4b5fd;">🎥 Beispiele</div>
         ${youtubeLink
-          ? youtubeLink.replace(
-              /style="[^"]*"/,
-              'style="display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:14px 10px;text-decoration:none;"'
-            ).replace(/>[^<]*</,'><span style="font-size:0.65rem;font-weight:800;letter-spacing:2px;color:rgba(167,139,250,0.8);text-transform:uppercase;">Beispiele</span><span style="font-family:\'Outfit\',sans-serif;font-size:0.95rem;font-weight:800;color:#a78bfa;"><')
-          : `<div style="display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:12px;padding:14px 10px;opacity:0.4;">
-               <span style="font-size:0.65rem;font-weight:800;letter-spacing:2px;color:rgba(167,139,250,0.8);text-transform:uppercase;">Beispiele</span>
-               <span style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:800;color:#a78bfa;">Demnächst</span>
-             </div>`
+          ? youtubeLink.replace('display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.5);border-radius:10px;padding:7px 12px;color:#fca5a5;font-size:0.78rem;font-weight:700;text-decoration:none;margin-top:6px;',
+              'display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,0.15);border:1.5px solid rgba(239,68,68,0.4);border-radius:8px;padding:8px;color:#fca5a5;font-size:0.76rem;font-weight:800;text-decoration:none;')
+          : `<div style="display:flex;align-items:center;justify-content:center;background:rgba(139,92,246,0.06);border:1.5px solid rgba(139,92,246,0.2);border-radius:8px;padding:8px;color:rgba(196,181,253,0.3);font-size:0.76rem;font-weight:800;">Demnächst</div>`
         }
       </div>
     </div>
@@ -1359,8 +1350,8 @@
 
       <!-- Aufklappbare Reflexions-Panels -->
       <div id="rfx-panel-${rfxId}" style="display:none;margin-top:8px;">
-        <div id="box-${rfxId}" style="background:#0c1a2e;border:1.5px solid #0ea5e9;border-radius:16px;overflow:hidden;">
-          <div id="hdr-${rfxId}" style="background:#0ea5e9;padding:11px 16px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:space-between;">
+        <div id="box-${rfxId}" style="background:#1f1320;border:1.5px solid #c026d3;border-radius:16px;overflow:hidden;">
+          <div id="hdr-${rfxId}" style="background:#c026d3;padding:11px 16px;font-family:'Outfit',sans-serif;font-size:0.88rem;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:space-between;">
             <div style="display:flex;align-items:center;gap:8px;"><span id="rfx-icon-${rfxId}">✍️</span><span id="rfx-title-${rfxId}">Meine Reflexion</span></div>
             <span onclick="document.getElementById('rfx-panel-${rfxId}').style.display='none'" style="cursor:pointer;opacity:0.6;font-size:0.85rem;">✕</span>
           </div>
@@ -1548,9 +1539,9 @@ function rfxOpen(id, tab) {
   // tab wechseln
   document.getElementById('meine-'+id).style.display = isMeine ? 'block' : 'none';
   document.getElementById('kinder-'+id).style.display = isMeine ? 'none' : 'block';
-  box.style.borderColor = isMeine ? '#0ea5e9' : '#c026d3';
-  box.style.background = isMeine ? '#0c1a2e' : '#1f1320';
-  hdr.style.background = isMeine ? '#0ea5e9' : '#c026d3';
+  box.style.borderColor = isMeine ? '#c026d3' : '#0284c7';
+  box.style.background = isMeine ? '#1f1320' : '#0c1a2e';
+  hdr.style.background = isMeine ? '#c026d3' : '#0284c7';
   icon.textContent = isMeine ? '✍️' : '🗣️';
   title.textContent = isMeine ? 'Meine Reflexion' : 'Kinder-Feedback';
 }
