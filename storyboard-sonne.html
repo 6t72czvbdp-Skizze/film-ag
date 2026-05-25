@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 Storyboard · Die Sonne</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
+
+/* ── NAV TABS ── */
+.tabs {
+  display: flex; gap: 6px; padding: 16px 16px 0;
+  position: sticky; top: 0; background: #0d0d18; z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 12px;
+}
+.tab {
+  flex: 1; padding: 9px 6px; border-radius: 10px;
+  font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.4);
+  background: transparent; transition: all 0.2s; text-align: center;
+}
+.tab.active { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; }
+
+/* ── DESIGNS (hidden by default) ── */
+.design { display: none; padding: 20px 16px 50px; max-width: 520px; margin: 0 auto; }
+.design.active { display: block; }
+
+/* ════════════════════════════════
+   DESIGN 1 – NOIR
+   Dunkle Eleganz, Gold-Akzente
+   ════════════════════════════════ */
+.d1-hero {
+  background: linear-gradient(160deg, #1a1400, #0d0d18);
+  border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 20px; padding: 28px 20px; text-align: center; margin-bottom: 16px;
+  position: relative; overflow: hidden;
+}
+.d1-hero::after {
+  content: '☀'; position: absolute; right: -10px; top: -20px;
+  font-size: 8rem; opacity: 0.04; line-height: 1;
+}
+.d1-hero-label { font-size: 0.58rem; font-weight: 700; letter-spacing: 5px; text-transform: uppercase; color: rgba(245,158,11,0.5); margin-bottom: 10px; }
+.d1-hero h1 { font-family: 'Outfit', sans-serif; font-size: 2.4rem; font-weight: 900; letter-spacing: -1px; }
+.d1-hero h1 em { color: #f59e0b; font-style: normal; }
+.d1-hero p { font-size: 0.76rem; color: rgba(255,255,255,0.3); margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; }
+
+.d1-clip { margin-bottom: 8px; border-radius: 16px; overflow: hidden; }
+.d1-clip-top {
+  display: flex; align-items: center; gap: 0; cursor: pointer;
+  transition: opacity 0.2s;
+}
+.d1-clip-top:active { opacity: 0.8; }
+.d1-num {
+  width: 50px; height: 56px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; flex-shrink: 0;
+  font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 900; color: #fff;
+}
+.d1-icon { font-size: 0.9rem; margin-top: 1px; }
+.d1-mid { flex: 1; padding: 12px 14px 12px 4px; }
+.d1-type { font-size: 0.55rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; opacity: 0.55; display: block; margin-bottom: 3px; }
+.d1-title { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; line-height: 1.15; }
+.d1-arrow { padding: 0 14px; font-size: 0.7rem; opacity: 0.4; transition: transform 0.25s; }
+.d1-clip.open .d1-arrow { transform: rotate(180deg); opacity: 0.8; }
+.d1-detail {
+  display: none; background: rgba(0,0,0,0.25);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 14px 16px 16px;
+}
+.d1-clip.open .d1-detail { display: block; }
+.d1-body { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+.d1-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.d1-tag { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; color: rgba(255,255,255,0.55); }
+.d1-quote { border-left: 2px solid currentColor; padding: 6px 10px; margin: 8px 0; font-style: italic; font-size: 0.8rem; color: rgba(255,255,255,0.6); border-radius: 0 6px 6px 0; background: rgba(255,255,255,0.03); }
+.d1-list { padding-left: 16px; margin-top: 6px; }
+.d1-list li { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.d1-alert { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 7px 10px; font-size: 0.78rem; color: #fca5a5; margin-top: 8px; }
+.d1-fact { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+.d1-fact-n { font-size: 0.55rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4; margin-bottom: 3px; }
+.d1-fact-q { font-size: 0.86rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.d1-fact-d { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* clip colors d1 */
+.d1c1 { background: #161130; } .d1c1 .d1-num { background: #4338ca; }
+.d1c2 { background: #0d1a25; } .d1c2 .d1-num { background: #0369a1; }
+.d1c3 { background: #1f0c14; } .d1c3 .d1-num { background: #9d174d; }
+.d1c4 { background: #071810; } .d1c4 .d1-num { background: #065f46; }
+.d1c5 { background: #180d2e; } .d1c5 .d1-num { background: #5b21b6; }
+.d1c6 { background: #051615; } .d1c6 .d1-num { background: #134e4a; }
+.d1c7 { background: #1f0808; } .d1c7 .d1-num { background: #991b1b; }
+
+
+/* ════════════════════════════════
+   DESIGN 2 – MINIMAL GLASS
+   Glassmorphism, sehr clean
+   ════════════════════════════════ */
+.d2-hero {
+  text-align: center; padding: 32px 20px 24px;
+}
+.d2-sun { font-size: 4rem; display: block; margin-bottom: 12px; line-height: 1; }
+.d2-hero h1 { font-family: 'Outfit', sans-serif; font-size: 2.6rem; font-weight: 900; letter-spacing: -1.5px; color: #fff; margin-bottom: 4px; }
+.d2-hero h1 span { background: linear-gradient(90deg, #f59e0b, #fcd34d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.d2-hero p { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 3px; text-transform: uppercase; }
+
+.d2-clip {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px; margin-bottom: 8px; overflow: hidden;
+  transition: border-color 0.2s;
+}
+.d2-clip.open { border-color: rgba(255,255,255,0.2); }
+.d2-top { display: flex; align-items: center; gap: 12px; padding: 14px 16px; cursor: pointer; }
+.d2-badge {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 900; color: #fff;
+}
+.d2-meta { flex: 1; }
+.d2-type { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: #fff; display: block; margin-bottom: 3px; line-height: 1.1; }
+.d2-title { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 400; color: rgba(255,255,255,0.5); margin-top: 1px; }
+.d2-chevron { font-size: 0.65rem; color: rgba(255,255,255,0.3); transition: transform 0.25s; }
+.d2-clip.open .d2-chevron { transform: rotate(180deg); color: rgba(255,255,255,0.6); }
+.d2-content { display: none; padding: 0 16px 16px; }
+.d2-clip.open .d2-content { display: block; }
+.d2-divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 12px; }
+.d2-text { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+.d2-highlight { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); border-radius: 8px; padding: 8px 12px; margin: 8px 0; line-height: 1.5; }
+.d2-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.d2-chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; color: rgba(255,255,255,0.5); }
+.d2-qs { display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
+.d2-q { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; display: flex; gap: 8px; }
+.d2-q::before { content: '›'; opacity: 0.4; flex-shrink: 0; }
+.d2-facts { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.d2-fact { background: rgba(255,255,255,0.03); border-radius: 10px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.06); }
+.d2-fact strong { font-size: 0.82rem; color: #fff; display: block; margin-bottom: 2px; }
+.d2-fact span { font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+.d2b1 { background: linear-gradient(135deg,#f59e0b,#f97316); } .d2b2 { background: linear-gradient(135deg,#f97316,#ea580c); }
+.d2b3 { background: linear-gradient(135deg,#fbbf24,#f59e0b); } .d2b4 { background: linear-gradient(135deg,#f59e0b,#d97706); }
+.d2b5 { background: linear-gradient(135deg,#fb923c,#f97316); } .d2b6 { background: linear-gradient(135deg,#fcd34d,#f59e0b); }
+.d2b7 { background: linear-gradient(135deg,#f97316,#dc2626); }
+
+
+/* ════════════════════════════════
+   DESIGN 3 – BENTO
+   Grid-Kacheln, sehr modern
+   ════════════════════════════════ */
+.d3-hero {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+  padding: 18px 16px; background: rgba(245,158,11,0.08);
+  border: 1px solid rgba(245,158,11,0.2); border-radius: 18px;
+}
+.d3-hero-sun { font-size: 3rem; flex-shrink: 0; }
+.d3-hero h1 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 900; line-height: 1; }
+.d3-hero h1 span { color: #f59e0b; }
+.d3-hero p { font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-top: 4px; letter-spacing: 2px; text-transform: uppercase; }
+
+.d3-clip {
+  border-radius: 16px; overflow: hidden; margin-bottom: 8px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.d3-top {
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 0; cursor: pointer;
+}
+.d3-num-block {
+  width: 54px; min-height: 54px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 900; gap: 2px;
+}
+.d3-num-small { font-size: 0.75rem; opacity: 0.6; }
+.d3-info { padding: 12px 12px 12px 6px; }
+.d3-type { font-size: 0.55rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; opacity: 0.45; display: block; margin-bottom: 2px; }
+.d3-name { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 800; }
+.d3-preview { font-size: 0.74rem; color: rgba(255,255,255,0.4); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.d3-btn { padding: 0 14px; font-size: 0.65rem; color: rgba(255,255,255,0.3); transition: transform 0.25s; }
+.d3-clip.open .d3-btn { transform: rotate(90deg); }
+.d3-expand { display: none; padding: 12px 14px 14px; background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.05); }
+.d3-clip.open .d3-expand { display: block; }
+.d3-text { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.65; }
+.d3-em { font-size: 0.84rem; font-weight: 600; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.04); border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: block; line-height: 1.5; }
+.d3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+.d3-cell { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 8px 10px; }
+.d3-cell-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.4; margin-bottom: 3px; }
+.d3-cell-v { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+.d3-qs { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+.d3-qi { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; padding-left: 10px; position: relative; }
+.d3-qi::before { content: '—'; position: absolute; left: 0; opacity: 0.3; }
+.d3-warn { font-size: 0.78rem; color: #fca5a5; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18); border-radius: 8px; padding: 6px 10px; margin-top: 8px; }
+
+.d3c1 { background: rgba(67,56,202,0.15); } .d3c1 .d3-num-block { background: #4338ca; }
+.d3c2 { background: rgba(3,105,161,0.15); } .d3c2 .d3-num-block { background: #0369a1; }
+.d3c3 { background: rgba(157,23,77,0.15); } .d3c3 .d3-num-block { background: #9d174d; }
+.d3c4 { background: rgba(6,95,70,0.15); }  .d3c4 .d3-num-block { background: #065f46; }
+.d3c5 { background: rgba(91,33,182,0.15); } .d3c5 .d3-num-block { background: #5b21b6; }
+.d3c6 { background: rgba(19,78,74,0.15); }  .d3c6 .d3-num-block { background: #134e4a; }
+.d3c7 { background: rgba(153,27,27,0.15); } .d3c7 .d3-num-block { background: #991b1b; }
+</style>
+</head>
+<body>
+
+
+<!-- ════ DESIGN 2: MINIMAL ════ -->
+<div class="design active" id="d2">
+  <div class="d2-hero">
+    <span class="d2-sun">☀️</span>
+    <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;letter-spacing:-1px;margin-bottom:4px;">Die Sonne</div>
+    <div style="font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:4px;">Storyboardbeispiel</div>
+    <p>7 Clips · Film-AG</p>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b1">1</div>
+      <div class="d2-meta"><span class="d2-type">🎬 Clip: INTRO</span><div class="d2-title">Stop-Motion-Vorspann</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-text" style="font-weight:500;color:rgba(255,255,255,0.8);">Stop Motion Clip</div>
+      <div style="margin-top:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;">
+        <div style="padding:8px 12px 4px;font-size:0.58rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">▶ Beispielvideo</div>
+        <video controls playsinline style="width:100%;display:block;background:#000;max-height:260px;" src="herr_hoss_film_ag_intro.MP4"></video>
+      </div>
+    </div>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b2">2</div>
+      <div class="d2-meta"><span class="d2-type">👋 Clip: VORSTELLUNG</span><div class="d2-title">Das Filmteam</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-text">Jedes Kind stellt sich kurz vor.</div>
+      <div class="d2-highlight">☀️ Zum Schluss laufen alle gemeinsam raus – auf den Schulhof in die Sonne.</div>
+      <div style="margin-top:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;">
+        <div style="padding:8px 12px 4px;font-size:0.58rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">▶ Beispielvideo</div>
+        <video controls playsinline style="width:100%;display:block;background:#000;max-height:260px;" src="vorstellung_clip_beispiel.mp4"></video>
+        <div style="padding:4px 12px 8px;font-size:0.72rem;color:rgba(255,255,255,0.3);">Nur als Beispiel – so könnte die Vorstellung aussehen.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b3">3</div>
+      <div class="d2-meta"><span class="d2-type">🎤 Clip: REPORTER</span><div class="d2-title">Interview-Rätsel</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-highlight" style="color:#fca5a5;background:rgba(239,68,68,0.08);">🚫 „Sonne" darf nicht gesagt werden → Piepton 🔔</div>
+      <div class="d2-qs">
+        <div class="d2-q">Was wäre auf der Erde anders, wenn es das nicht gäbe?</div>
+        <div class="d2-q">Was kann man nur machen, wenn es da ist?</div>
+        <div class="d2-q">Beschreibe es mit anderen Wörtern.</div>
+        <div class="d2-q">Was macht man besonders gern bei gutem Wetter?</div>
+        <div class="d2-q">Wann merkt man, dass Sommer ist?</div>
+        <div class="d2-q">Was wird warm?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b4">4</div>
+      <div class="d2-meta"><span class="d2-type">💡 Clip: WISSEN</span><div class="d2-title">3 Fakten</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-facts">
+        <div class="d2-fact"><strong>Licht braucht 8 Minuten</strong><span>Kind hält Taschenlampe – zählt 8 Min.</span></div>
+        <div class="d2-fact"><strong>Die Sonne ist riesig</strong><span>Blaubeere = Erde · Sitzball = Sonne</span></div>
+        <div class="d2-fact"><strong>5.500 Grad heiß</strong><span>Vergleich: Pizzaofen · Feuer · Herdplatte</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b5">5</div>
+      <div class="d2-meta"><span class="d2-type">🎭 Clip: ZEITREISE</span><div class="d2-title">Die Sonne früher</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-text">Reporter reisen zu den Ägyptern.</div>
+      <div class="d2-highlight">„Wie wusstet ihr früher ohne Handy die Uhrzeit?" 😄</div>
+      <div class="d2-text">Die Ägypter zeigen ihre Sonnenuhr.</div>
+    </div>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b6">6</div>
+      <div class="d2-meta"><span class="d2-type">🔬 Clip: CHECK</span><div class="d2-title">Sonnenuhr-Test</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-text">Wir bauen eine Sonnenuhr und testen selbst: Funktioniert sie wirklich?</div>
+    </div>
+  </div>
+
+  <div class="d2-clip" onclick="tog(this)">
+    <div class="d2-top">
+      <div class="d2-badge d2b7">7</div>
+      <div class="d2-meta"><span class="d2-type">🎬 Clip: OUTRO</span><div class="d2-title">Abschluss</div></div>
+      <div class="d2-chevron">▼</div>
+    </div>
+    <div class="d2-content">
+      <div class="d2-divider"></div>
+      <div class="d2-chips">
+        <span class="d2-chip">📋 Namen</span>
+        <span class="d2-chip">🙏 Dank</span>
+        <span class="d2-chip">😂 Versprecher</span>
+        <span class="d2-chip">🎉 Lacher</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
