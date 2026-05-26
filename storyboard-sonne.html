@@ -7,12 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600;700;800;900&family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
+body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
 
 /* ── NAV TABS ── */
 .tabs {
   display: flex; gap: 6px; padding: 16px 16px 0;
-  position: sticky; top: 0; background: #252535; z-index: 100;
+  position: sticky; top: 0; background: #32324a; z-index: 100;
   border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 12px;
 }
 .tab {
@@ -73,11 +73,11 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d1-body { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
 .d1-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
 .d1-tag { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; color: rgba(255,255,255,0.55); }
-.d1-quote { border-left: 2px solid currentColor; padding: 6px 10px; margin: 8px 0; font-style: italic; font-size: 0.8rem; color: rgba(255,255,255,0.6); border-radius: 0 6px 6px 0; background: rgba(255,255,255,0.03); }
+.d1-quote { border-left: 2px solid currentColor; padding: 6px 10px; margin: 8px 0; font-style: italic; font-size: 0.8rem; color: rgba(255,255,255,0.6); border-radius: 0 6px 6px 0; background: rgba(255,255,255,0.06); }
 .d1-list { padding-left: 16px; margin-top: 6px; }
 .d1-list li { font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
 .d1-alert { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 7px 10px; font-size: 0.78rem; color: #fca5a5; margin-top: 8px; }
-.d1-fact { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
+.d1-fact { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 10px 12px; margin-top: 8px; }
 .d1-fact-n { font-size: 0.55rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4; margin-bottom: 3px; }
 .d1-fact-q { font-size: 0.86rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
 .d1-fact-d { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
@@ -105,8 +105,8 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d2-hero p { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 3px; text-transform: uppercase; }
 
 .d2-clip {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
   border-radius: 18px; margin-bottom: 8px; overflow: hidden;
   transition: border-color 0.2s;
 }
@@ -133,7 +133,7 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d2-q { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.4; display: flex; gap: 8px; }
 .d2-q::before { content: '›'; opacity: 0.4; flex-shrink: 0; }
 .d2-facts { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
-.d2-fact { background: rgba(255,255,255,0.03); border-radius: 10px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.06); }
+.d2-fact { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.12); }
 .d2-fact strong { font-size: 0.82rem; color: #fff; display: block; margin-bottom: 2px; }
 .d2-fact span { font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
 
@@ -180,9 +180,9 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d3-expand { display: none; padding: 12px 14px 14px; background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.05); }
 .d3-clip.open .d3-expand { display: block; }
 .d3-text { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.65; }
-.d3-em { font-size: 0.84rem; font-weight: 600; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.04); border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: block; line-height: 1.5; }
+.d3-em { font-size: 0.84rem; font-weight: 600; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07); border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: block; line-height: 1.5; }
 .d3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
-.d3-cell { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 8px 10px; }
+.d3-cell { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 8px 10px; }
 .d3-cell-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.4; margin-bottom: 3px; }
 .d3-cell-v { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
 .d3-qs { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
@@ -235,12 +235,11 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
     </div>
     <div class="d2-content">
       <div class="d2-divider"></div>
-      <div class="d2-text">Jedes Kind stellt sich kurz vor.</div>
+      <div class="d2-text">Hier stell ich mir sowas Ähnliches vor, wie im Beispiel…</div>
       <div class="d2-highlight">☀️ Zum Schluss laufen alle gemeinsam raus – auf den Schulhof in die Sonne.</div>
       <div style="margin-top:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;">
         <div style="padding:8px 12px 4px;font-size:0.58rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">▶ Beispielvideo</div>
         <video controls playsinline style="width:100%;display:block;background:#000;max-height:260px;" src="vorstellung_clip_beispiel.mp4"></video>
-        <div style="padding:4px 12px 8px;font-size:0.72rem;color:rgba(255,255,255,0.3);">Nur als Beispiel – so könnte die Vorstellung aussehen.</div>
       </div>
     </div>
   </div>
@@ -253,6 +252,7 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
     </div>
     <div class="d2-content">
       <div class="d2-divider"></div>
+      <div class="d2-text" style="margin-bottom:8px;">Die Reporter gehen in der Pause nach draußen auf den Schulhof und interviewen andere Kinder.</div>
       <div class="d2-highlight" style="color:#fca5a5;background:rgba(239,68,68,0.08);">🚫 „Sonne" darf nicht gesagt werden → Piepton 🔔</div>
       <div class="d2-qs">
         <div class="d2-q">Was wäre auf der Erde anders, wenn es das nicht gäbe?</div>
@@ -274,8 +274,8 @@ body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min
     <div class="d2-content">
       <div class="d2-divider"></div>
       <div class="d2-facts">
-        <div class="d2-fact"><strong>Licht braucht 8 Minuten</strong><span>Kind hält Taschenlampe – zählt 8 Min.</span></div>
-        <div class="d2-fact"><strong>Die Sonne ist riesig</strong><span>Blaubeere = Erde · Sitzball = Sonne</span></div>
+        <div class="d2-fact"><strong>Licht braucht 8 Minuten</strong><span>Stell dir vor, du könntest auf der Sonne stehen und machst eine Taschenlampe an – der Lichtkegel würde erst nach 8 Minuten auf der Erde ankommen.</span></div>
+        <div class="d2-fact"><strong>Die Sonne ist riesig</strong><span>Szene: Ein Kind kommt rein und hält eine kleine Blaubeere hoch: „Wenn das die Erde wäre…" – dann kommt ein anderes Kind mit einem großen Sitzball: „…dann wäre das die Sonne."</span></div>
         <div class="d2-fact"><strong>5.500 Grad heiß</strong><span>Vergleich: Pizzaofen · Feuer · Herdplatte</span></div>
       </div>
     </div>
