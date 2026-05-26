@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎬 Storyboard · Die Sonne</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600;700;800;900&family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
+body { background: #252535; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
 
 /* ── NAV TABS ── */
 .tabs {
   display: flex; gap: 6px; padding: 16px 16px 0;
-  position: sticky; top: 0; background: #0d0d18; z-index: 100;
+  position: sticky; top: 0; background: #252535; z-index: 100;
   border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 12px;
 }
 .tab {
@@ -118,7 +118,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 900; color: #fff;
 }
 .d2-meta { flex: 1; }
-.d2-type { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: #fff; display: block; margin-bottom: 3px; line-height: 1.1; }
+.d2-type { display: block; margin-bottom: 3px; line-height: 1.2; } .d2-type .clip-pre { font-family: 'Outfit', sans-serif; font-size: 0.65rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); } .d2-type .clip-name { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; display: block; margin-top: 1px; }
 .d2-title { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 400; color: rgba(255,255,255,0.5); margin-top: 1px; }
 .d2-chevron { font-size: 0.65rem; color: rgba(255,255,255,0.3); transition: transform 0.25s; }
 .d2-clip.open .d2-chevron { transform: rotate(180deg); color: rgba(255,255,255,0.6); }
@@ -206,15 +206,15 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
 <div class="design active" id="d2">
   <div class="d2-hero">
     <span class="d2-sun">☀️</span>
-    <div style="font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:900;letter-spacing:-1px;margin-bottom:4px;">Die Sonne</div>
-    <div style="font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:700;color:rgba(255,255,255,0.55);margin-bottom:4px;">Storyboardbeispiel</div>
+    <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:400;letter-spacing:1px;color:#fff;margin-bottom:6px;">Die Sonne</div>
+    <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.35);letter-spacing:4px;text-transform:uppercase;margin-bottom:4px;">Storyboardbeispiel</div>
     <p>7 Clips · Film-AG</p>
   </div>
 
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b1">1</div>
-      <div class="d2-meta"><span class="d2-type">🎬 Clip: INTRO</span><div class="d2-title">Stop-Motion-Vorspann</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">🎬 Clip:</span><span class="clip-name">INTRO</span></span><div class="d2-title">Stop-Motion-Vorspann</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
@@ -222,7 +222,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
       <div class="d2-text" style="font-weight:500;color:rgba(255,255,255,0.8);">Stop Motion Clip</div>
       <div style="margin-top:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;">
         <div style="padding:8px 12px 4px;font-size:0.58rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">▶ Beispielvideo</div>
-        <video controls playsinline style="width:100%;display:block;background:#000;max-height:260px;" src="herr_hoss_film_ag_intro.MP4"></video>
+        <video controls playsinline preload="metadata" style="width:100%;display:block;background:#000;border-radius:0 0 10px 10px;max-height:260px;"><source src="herr_hoss_film_ag_intro.mp4" type="video/mp4"><source src="herr_hoss_film_ag_intro.MP4" type="video/mp4"><p style="color:rgba(255,255,255,0.4);padding:12px;font-size:0.78rem;">Video nicht verfügbar – bitte auf GitHub hochladen.</p></video>
       </div>
     </div>
   </div>
@@ -230,7 +230,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b2">2</div>
-      <div class="d2-meta"><span class="d2-type">👋 Clip: VORSTELLUNG</span><div class="d2-title">Das Filmteam</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">👋 Clip:</span><span class="clip-name">VORSTELLUNG</span></span><div class="d2-title">Das Filmteam</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
@@ -248,7 +248,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b3">3</div>
-      <div class="d2-meta"><span class="d2-type">🎤 Clip: REPORTER</span><div class="d2-title">Interview-Rätsel</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">🎤 Clip:</span><span class="clip-name">REPORTER</span></span><div class="d2-title">Interview-Rätsel</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
@@ -268,7 +268,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b4">4</div>
-      <div class="d2-meta"><span class="d2-type">💡 Clip: WISSEN</span><div class="d2-title">3 Fakten</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">💡 Clip:</span><span class="clip-name">WISSEN</span></span><div class="d2-title">3 Fakten</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
@@ -284,7 +284,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b5">5</div>
-      <div class="d2-meta"><span class="d2-type">🎭 Clip: ZEITREISE</span><div class="d2-title">Die Sonne früher</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">🎭 Clip:</span><span class="clip-name">ZEITREISE</span></span><div class="d2-title">Die Sonne früher</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
@@ -298,7 +298,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b6">6</div>
-      <div class="d2-meta"><span class="d2-type">🔬 Clip: CHECK</span><div class="d2-title">Sonnenuhr-Test</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">🔬 Clip:</span><span class="clip-name">CHECK</span></span><div class="d2-title">Sonnenuhr-Test</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
@@ -310,7 +310,7 @@ body { background: #0d0d18; font-family: 'DM Sans', sans-serif; color: #fff; min
   <div class="d2-clip" onclick="tog(this)">
     <div class="d2-top">
       <div class="d2-badge d2b7">7</div>
-      <div class="d2-meta"><span class="d2-type">🎬 Clip: OUTRO</span><div class="d2-title">Abschluss</div></div>
+      <div class="d2-meta"><span class="d2-type"><span class="clip-pre">🎬 Clip:</span><span class="clip-name">OUTRO</span></span><div class="d2-title">Abschluss</div></div>
       <div class="d2-chevron">▼</div>
     </div>
     <div class="d2-content">
