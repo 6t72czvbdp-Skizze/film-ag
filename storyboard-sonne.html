@@ -7,12 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600;700;800;900&family=Playfair+Display:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
+body { background: #1e2240; font-family: 'DM Sans', sans-serif; color: #fff; min-height: 100vh; }
 
 /* ── NAV TABS ── */
 .tabs {
   display: flex; gap: 6px; padding: 16px 16px 0;
-  position: sticky; top: 0; background: #32324a; z-index: 100;
+  position: sticky; top: 0; background: #1e2240; z-index: 100;
   border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 12px;
 }
 .tab {
@@ -105,8 +105,8 @@ body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d2-hero p { font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 3px; text-transform: uppercase; }
 
 .d2-clip {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,220,100,0.12);
   border-radius: 18px; margin-bottom: 8px; overflow: hidden;
   transition: border-color 0.2s;
 }
@@ -126,7 +126,7 @@ body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d2-clip.open .d2-content { display: block; }
 .d2-divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 12px; }
 .d2-text { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
-.d2-highlight { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); border-radius: 8px; padding: 8px 12px; margin: 8px 0; line-height: 1.5; }
+.d2-highlight { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.8); background: rgba(251,191,36,0.08); border-radius: 8px; padding: 8px 12px; margin: 8px 0; line-height: 1.5; border-left: 2px solid rgba(251,191,36,0.3); }
 .d2-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
 .d2-chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; color: rgba(255,255,255,0.5); }
 .d2-qs { display: flex; flex-direction: column; gap: 5px; margin-top: 6px; }
@@ -137,10 +137,10 @@ body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d2-fact strong { font-size: 0.82rem; color: #fff; display: block; margin-bottom: 2px; }
 .d2-fact span { font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.4; }
 
-.d2b1 { background: linear-gradient(135deg,#f59e0b,#f97316); } .d2b2 { background: linear-gradient(135deg,#f97316,#ea580c); }
-.d2b3 { background: linear-gradient(135deg,#fbbf24,#f59e0b); } .d2b4 { background: linear-gradient(135deg,#f59e0b,#d97706); }
-.d2b5 { background: linear-gradient(135deg,#fb923c,#f97316); } .d2b6 { background: linear-gradient(135deg,#fcd34d,#f59e0b); }
-.d2b7 { background: linear-gradient(135deg,#f97316,#dc2626); }
+.d2b1 { background: linear-gradient(135deg,#fbbf24,#f59e0b); } .d2b2 { background: linear-gradient(135deg,#fb923c,#f97316); }
+.d2b3 { background: linear-gradient(135deg,#f43f5e,#e11d48); } .d2b4 { background: linear-gradient(135deg,#34d399,#059669); }
+.d2b5 { background: linear-gradient(135deg,#a78bfa,#7c3aed); } .d2b6 { background: linear-gradient(135deg,#38bdf8,#0284c7); }
+.d2b7 { background: linear-gradient(135deg,#f472b6,#db2777); }
 
 
 /* ════════════════════════════════
@@ -180,7 +180,7 @@ body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min
 .d3-expand { display: none; padding: 12px 14px 14px; background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.05); }
 .d3-clip.open .d3-expand { display: block; }
 .d3-text { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.65; }
-.d3-em { font-size: 0.84rem; font-weight: 600; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.07); border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: block; line-height: 1.5; }
+.d3-em { font-size: 0.84rem; font-weight: 600; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.06); border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: block; line-height: 1.5; }
 .d3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
 .d3-cell { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 8px 10px; }
 .d3-cell-l { font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.4; margin-bottom: 3px; }
@@ -204,9 +204,9 @@ body { background: #32324a; font-family: 'DM Sans', sans-serif; color: #fff; min
 
 <!-- ════ DESIGN 2: MINIMAL ════ -->
 <div class="design active" id="d2">
-  <div class="d2-hero">
+  <div class="d2-hero" style="position:relative;overflow:hidden;"><div style="position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:280px;height:200px;background:radial-gradient(ellipse,rgba(251,191,36,0.15),transparent 70%);pointer-events:none;"></div>
     <span class="d2-sun">☀️</span>
-    <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:400;letter-spacing:1px;color:#fff;margin-bottom:6px;">Die Sonne</div>
+    <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:400;letter-spacing:1px;color:#fff;margin-bottom:6px;text-shadow:0 0 40px rgba(251,191,36,0.4);">Die Sonne</div>
     <div style="font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.35);letter-spacing:4px;text-transform:uppercase;margin-bottom:4px;">Storyboardbeispiel</div>
     <p>7 Clips · Film-AG</p>
   </div>
